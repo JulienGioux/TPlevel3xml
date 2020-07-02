@@ -25,5 +25,5 @@ $img = $item->enclosure;
 
 
 
-echo $title, $desc.PHP_EOL, $link, PHP_EOL, $date, PHP_EOL, $img;
+echo $title, $desc, $link, $date, $img;
 var_dump($item);
