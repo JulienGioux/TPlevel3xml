@@ -96,15 +96,15 @@
                                     <legend class="col-form-label col">Sujets</legend>
                                     <div>
                                         <input type="checkbox" id="actuCheck" name="subCheck" value="actuCheck">
-                                        <label for="actuCheck"> Actualités</label><br>
+                                        <label for="actuCheck">Actualités</label><br>
                                         <input type="checkbox" id="secuCheck" name="subCheck" value="secuCheck">
                                         <label for="secuCheck"> Sécurité</label><br>
                                         <input type="checkbox" id="appliCheck" name="subCheck" value="appliCheck">
                                         <label for="appliCheck"> Applications</label><br>
                                         <input type="checkbox" id="technoCheck" name="subCheck" value="technoCheck">
-                                        <label for="technoCheck"> Technologie</label><br>
+                                        <label for="technoCheck">Technologie</label><br>
                                         <input type="checkbox" id="buzzCheck" name="subCheck" value="buzzCheck">
-                                        <label for="buzzCheck"> Buzz</label><br>
+                                        <label for="buzzCheck">Buzz</label><br>
                                     </div>
                                 </div>
                             </div>
