@@ -97,15 +97,15 @@
                                 <div class="col">
                                     <legend class="col-form-label col">Sujets</legend>
                                     <div>
-                                        <input type="checkbox" id="actuCheck" name="subCheck" onclick="test()" value="actuCheck">
+                                        <input type="checkbox" id="actuCheck" name="subCheck" value="actuCheck">
                                         <label for="actuCheck">Actualités</label><br>
-                                        <input type="checkbox" id="secuCheck" name="subCheck" onclick="test()" value="secuCheck">
+                                        <input type="checkbox" id="secuCheck" name="subCheck" value="secuCheck">
                                         <label for="secuCheck"> Sécurité</label><br>
-                                        <input type="checkbox" id="appliCheck" name="subCheck" onclick="test()" value="appliCheck">
+                                        <input type="checkbox" id="appliCheck" name="subCheck" value="appliCheck">
                                         <label for="appliCheck"> Applications</label><br>
-                                        <input type="checkbox" id="technoCheck" name="subCheck" onclick="test()" value="technoCheck">
+                                        <input type="checkbox" id="technoCheck" name="subCheck" value="technoCheck">
                                         <label for="technoCheck">Technologie</label><br>
-                                        <input type="checkbox" id="buzzCheck" name="subCheck" onclick="test()" value="buzzCheck">
+                                        <input type="checkbox" id="buzzCheck" name="subCheck" value="buzzCheck">
                                         <label for="buzzCheck">Buzz</label><br>
                                     </div>
                                 </div>
@@ -136,27 +136,5 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script>
- var checkBox = document.getElementsByName('subCheck');
- var j=0;
-
-function test() {
-    for(var i=0;i<checkBox.length;i++){
-        if(checkBox[i].checked) {
-            j++
-        } else {
-        checkBox[i].disabled = false;
-        };
-    }
-
-        if(j>2) {
-            checkBox.forEach(el => {
-                if (el.checked == false) {
-                    el.disabled = true;
-                }
-            });
-    }
-    j=0;
-}
-</script>
+<script src="assets/js/testCheckBox.js"></script>
 </html>
