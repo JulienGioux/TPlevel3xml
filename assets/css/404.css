@@ -1,0 +1,32 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: goldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1, h2 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-weight: normal;
+    
+}
+h1 {
+    font-size: 10vw;
+    text-decoration: underline;
+
+}
+h2 {
+    font-size: 2.2vw;
+}
+a {
+    color: Black;
+    text-decoration: none;
+}
+a:hover {
+    color: darkgoldenrod;
+    text-decoration: underline;
+    transition: 0.3s;
+}
