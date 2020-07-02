@@ -1,4 +1,4 @@
-<?php require_once "assets/controllers/index-controller.php"?>
+<?php require_once "controllers/index-controller.php"?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
