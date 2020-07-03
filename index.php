@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
-    <link rel="stylesheet" href="<?= isset($_COOKIE["colorTheme"]) ? $_COOKIE["colorTheme"] : "assets/css/defcolor.css" ?>">
+    <link rel="stylesheet" href="<?= $_POST['colorTheme'] ?? $_COOKIE["colorTheme"] ?? "assets/css/defcolor.css"; ?>">
     <title>Accueil</title>
 </head>
 
@@ -41,7 +41,7 @@
     <main>
         <?php
         foreach ($rssChoice as $key => $value) { ?>
-            <section class="firstSubject row-sm-12 mx-auto m-5"><?= $rss = simplexml_load_file($value) ?></section>
+            <section class="firstSubject row-sm-12 mx-auto m-5"><?= $rss = simplexml_load_file($value) ?>
             <?php
             for ($i = 0; $i < $articlesNumber; $i++) { ?>
                 <div class="media col-sm-8 bg-light shadow border-top border-secondary p-3">
@@ -55,8 +55,9 @@
                         </li>
                     </ul>
                 </div>
-        <?php }
-        } ?>
+        <?php } ?>
+        </section>
+    <?php } ?>
 
 
 

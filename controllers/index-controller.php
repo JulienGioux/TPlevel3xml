@@ -13,7 +13,7 @@ else {
     print "Cookies refusés.";
 }
 
-
+var_dump($_POST);
 //initialisation
 setlocale(LC_TIME, 'french.UTF-8, fr-FR.UTF-8', 'fr.UTF-8', 'fra.UTF-8', 'fr_FR.UTF-8');
 date_default_timezone_set('Europe/Paris');
@@ -57,7 +57,7 @@ if (isset($_POST) && !empty($_POST)) {
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
         $articlesNumber = intval($_POST['articlesNumber']);
     } else {
-        $articlesNumber=3;
+        $articlesNumber=8;
     }
     if (isset($_POST['subCheck']) && !empty($_POST['subCheck'])) {
         $rssChoice = [];
@@ -68,7 +68,9 @@ if (isset($_POST) && !empty($_POST)) {
         $rssChoice = [$urlActu, $urlSecu, $urlApps];
      } 
 }
-
+if (isset($_POST) && !empty($_POST)) {
+    header("Location: $_SERVER[PHP_SELF]");
+}
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
 function sortItem($rss,$i,$el) {
     $item = $rss->channel->item[$i];
