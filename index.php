@@ -41,27 +41,23 @@
     <main>
         <?php
         foreach ($rssChoice as $key => $value) { ?>
-            <section class="firstSubject row-sm-12 mx-auto m-5"><?= $rss = simplexml_load_file($value) ?>
-            <?php
-            for ($i = 0; $i < $articlesNumber; $i++) { ?>
-                <div class="media col-sm-8 bg-light shadow border-top border-secondary p-3">
-                    <ul class="list-unstyled">
-                        <li class="media">
-                            <img src="<?= sortItem($rss, $i, 'enclosure') ?>" class="media-object mr-3" alt="...">
-                            <div class="media-body">
-                                <h5 class="mt-0 mb-1"><?= sortItem($rss, $i, 'title') ?></h5>
-                                <?= sortItem($rss, $i, 'description') ?>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <section class="topic m-5 row justify-content-center"><?= $rss = simplexml_load_file($value) ?>
+                <?php
+                for ($i = 0; $i < $articlesNumber; $i++) { ?>
+                    <div class="col-sm-8 topicMedia media bg-light p-3 ">
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mr-3" alt="...">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1 "><?= sortItem($rss, $i, 'title') ?></h5>
+                                    <?= sortItem($rss, $i, 'description') ?>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                <?php } ?>
+            </section>
         <?php } ?>
-        </section>
-    <?php } ?>
-
-
-
-
     </main>
 
     <footer>
@@ -92,7 +88,7 @@
                             </div>
                             <div class="col">
                                 <label for="articlesNumber">Nombre d'articles</label>
-                                <select class="form-control" id="artcilesNumber" name="articlesNumber">
+                                <select class="form-control" id="articlesNumber" name="articlesNumber">
                                     <option value="3">3</option>
                                     <option value="5">5</option>
                                     <option value="8">8</option>
