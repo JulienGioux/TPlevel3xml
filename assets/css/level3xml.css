@@ -10,7 +10,6 @@ header {
 }
 
 .topic .topicMedia {
-    height: 10rem;
     width: auto;
 }
 
@@ -19,5 +18,5 @@ header {
 }
 
 .media-body img {
-visibility: hidden;
+display: none;
 }
