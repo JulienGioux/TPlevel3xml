@@ -56,6 +56,7 @@ if (isset($_POST) && !empty($_POST)) {
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
         $articlesNumber = intval($_POST['articlesNumber']);
+        
     } else {
         $articlesNumber=3;
     }
