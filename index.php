@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
-    <link rel="stylesheet" href="<?= $_POST['colorTheme'] ?? $_COOKIE["colorTheme"] ?? "assets/css/defcolor.css"; ?>">
+    <link rel="stylesheet" href="<?=$css?>">
     <title>Accueil</title>
 </head>
 
@@ -99,7 +99,7 @@
                                 <select class="form-control" id="articlesNumber" name="articlesNumber">
                                     <option value="3">3</option>
                                     <option value="5">5</option>
-                                    <option value="8">8</option>>
+                                    <option value="8">8</option>
                                 </select>
                             </div>
                             <div class="col">

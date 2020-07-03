@@ -13,7 +13,6 @@ else {
     $testCookie = false;
 }
 
-var_dump($_POST);
 //initialisation
 setlocale(LC_TIME, 'french.UTF-8, fr-FR.UTF-8', 'fr.UTF-8', 'fra.UTF-8', 'fr_FR.UTF-8');
 date_default_timezone_set('Europe/Paris');
@@ -23,19 +22,8 @@ $urlApps = "https://www.01net.com/rss/actualites/applis-logiciels/";
 $urlTech = "https://www.01net.com/rss/actualites/technos/";
 $urlBuzz = "https://www.01net.com/rss/actualites/buzz-societe/";
 
-$rssDefChoice = [$urlActu, $urlSecu, $urlApps];
 
-$rssActu = simplexml_load_file($urlActu);
-
-$item = $rssActu->channel->item[1];
-$title = $item->title;
-$desc = $item->description;
-$link = $item->link;
-$date = $item->pubDate;
-$img = $item->enclosure;
-$rssChoice = [$urlActu, $urlSecu, $urlApps];
-$articlesNumber=3;
-$css = "";
+$css = 'assets/css/blackTheme.css';
 
 //Traite les données de formulaire, besoin de vérifs supplémentaires
 if (isset($_POST) && !empty($_POST)) {
@@ -43,33 +31,43 @@ if (isset($_POST) && !empty($_POST)) {
             if($_POST["colorTheme"] == 'black') {
                 $css = 'assets/css/blackTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                // header("Location: $_SERVER[PHP_SELF]");
             } else if ($_POST["colorTheme"] == 'red') {
                 $css = 'assets/css/redTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                // header("Location: $_SERVER[PHP_SELF]");
             } else if ($_POST["colorTheme"] == 'blue') {
                 $css = 'assets/css/blueTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                // header("Location: $_SERVER[PHP_SELF]");
             }
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
-        $articlesNumber = intval($_POST['articlesNumber']);
-    } else {
-        $articlesNumber=8;
+        if($_POST["articlesNumber"] == '3') {
+            $articlesNumber = intval($_POST['articlesNumber']);
+            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+        } else if ($_POST["articlesNumber"] == '5') {
+            $articlesNumber = intval($_POST['articlesNumber']);
+            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+        } else if ($_POST["articlesNumber"] == '8') {
+            $articlesNumber = intval($_POST['articlesNumber']);
+            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+        }
     }
     if (isset($_POST['subCheck']) && !empty($_POST['subCheck'])) {
         $rssChoice = [];
         foreach ($_POST['subCheck'] as $key => $value) {            
             $rssChoice[$key] = $value;
-        }        
-     } else {
-        $rssChoice = [$urlActu, $urlSecu, $urlApps];
-     } 
+        }
+        setcookie("rssChoice", json_encode($rssChoice), time()+31556926 ,'/');       
+     }
 }
-if (isset($_POST) && !empty($_POST) && $testCookie && isset($_COOKIE['colorTheme'])) {
-    header("Location: $_SERVER[PHP_SELF]");
+// if (isset($_POST) && !empty($_POST) && $testCookie) {
+//     header("Location: $_SERVER[PHP_SELF]");
+// }
+
+$articlesNumber = $_POST['articlesNumber'] ?? $_COOKIE['articlesNumber'] ?? 3;
+if (isset($_COOKIE['rssChoice'])) {
+    $rssChoice = json_decode($_COOKIE['rssChoice']);
+} elseif (!isset($rssChoice)) {
+    $rssChoice = [$urlActu, $urlSecu, $urlApps];
 }
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
 function sortItem($rss,$i,$el) {
