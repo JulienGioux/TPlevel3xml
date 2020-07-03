@@ -58,6 +58,15 @@
         <?php }
         } ?>
 
+        
+
+
+    </main>
+
+    <footer>
+        <!-- mentions légales -->
+    </footer>
+
         <!-- Modal -->
         <div class="modal fade" id="parametersModal" tabindex="-1" role="dialog" aria-labelledby="parametersModal" aria-hidden="true">
             <div class="modal-dialog">
@@ -115,13 +124,32 @@
                 </div>
             </div>
         </div>
+        
+         <!-- modal article -->
+         <div class="modal fade" id="articlesModal" tabindex="-1" role="dialog" aria-labelledby="articlesModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-warning">
+                        <div class="modal-title text-white h6" id="exampleModalLabel"><?= $date ?></div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="params" action="index.php" method="post">
+                        <div class="modal-body mt-2">
+                            
+                                <div class="row text-center h5 mb-3 font-weith-bold"><?= $title ?></div>
+                                <div class="row h6 m-1"><?= $desc ?></div>
 
-    </main>
-
-    <footer>
-        <!-- mentions légales -->
-    </footer>
-
+                        </div>
+                        <div class="modal-footer">
+                            <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            <button type="submit" class="btn btn-warning" name="submit">Aller vers l'article</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
