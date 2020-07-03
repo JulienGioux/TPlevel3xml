@@ -34,7 +34,7 @@ $link = $item->link;
 $date = $item->pubDate;
 $img = $item->enclosure;
 $rssChoice = [$urlActu, $urlSecu, $urlApps];
-$articlesNumber=3;
+$articlesNumber = 3;
 $css = "";
 
 //Traite les données de formulaire, besoin de vérifs supplémentaires
@@ -43,22 +43,25 @@ if (isset($_POST) && !empty($_POST)) {
             if($_POST["colorTheme"] == 'black') {
                 $css = 'assets/css/blackTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                // header("Location: $_SERVER[PHP_SELF]");
             } else if ($_POST["colorTheme"] == 'red') {
                 $css = 'assets/css/redTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                // header("Location: $_SERVER[PHP_SELF]");
             } else if ($_POST["colorTheme"] == 'blue') {
                 $css = 'assets/css/blueTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                // header("Location: $_SERVER[PHP_SELF]");
             }
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
-        $articlesNumber = intval($_POST['articlesNumber']);
-        
-    } else {
-        $articlesNumber=3;
+        if($_POST["articlesNumber"] == '3') {
+            $articlesNumber = intval($_POST['articlesNumber']);
+            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+        } else if ($_POST["articlesNumber"] == '5') {
+            $articlesNumber = intval($_POST['articlesNumber']);
+            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+        } else if ($_POST["articlesNumber"] == '8') {
+            $articlesNumber = intval($_POST['articlesNumber']);
+            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+        }
     }
     if (isset($_POST['subCheck']) && !empty($_POST['subCheck'])) {
         $rssChoice = [];
@@ -69,7 +72,7 @@ if (isset($_POST) && !empty($_POST)) {
         $rssChoice = [$urlActu, $urlSecu, $urlApps];
      } 
 }
-if (isset($_POST) && !empty($_POST) && $testCookie && isset($_COOKIE['colorTheme'])) {
+if (isset($_POST) && !empty($_POST) && $testCookie) {
     header("Location: $_SERVER[PHP_SELF]");
 }
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
