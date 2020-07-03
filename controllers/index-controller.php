@@ -1,16 +1,16 @@
 <?php
 //Test si le navigateur accept les cookies
 if (isset($_COOKIE["test"])) {
-    print "Cookies existant.";
+    $testCookie = true;
 } else {
     setcookie("test", "ok", time()+3600*24*365);
 }
 
 if (isset($_COOKIE["test"])) {
-    print "Cookies test créé.";
+    $testCookie = true;
 }
 else {
-    print "Cookies refusés.";
+    $testCookie = false;
 }
 
 var_dump($_POST);
@@ -68,7 +68,7 @@ if (isset($_POST) && !empty($_POST)) {
         $rssChoice = [$urlActu, $urlSecu, $urlApps];
      } 
 }
-if (isset($_POST) && !empty($_POST)) {
+if (isset($_POST) && !empty($_POST) && $testCookie && isset($_COOKIE['colorTheme'])) {
     header("Location: $_SERVER[PHP_SELF]");
 }
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
