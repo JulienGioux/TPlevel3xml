@@ -38,13 +38,15 @@
         </div>
     </nav>
 
-    <main>
+    <main class="container-fluid">
+    <div class="row">
         <?php
         foreach ($rssChoice as $key => $value) { ?>
-            <section class="topic m-5 row justify-content-center"><?= $rss = simplexml_load_file($value) ?>
+            <section class="topic col"><?= $rss = simplexml_load_file($value) ?>
+            
                 <?php
                 for ($i = 0; $i < $articlesNumber; $i++) { ?>
-                    <div class="col-sm-8 topicMedia media bg-light p-3 ">
+                    <div class="topicMedia media bg-light p-3 ">
                         <ul class="list-unstyled">
                             <li class="media">
                                 <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mr-3" alt="...">
@@ -56,8 +58,10 @@
                         </ul>
                     </div>
                 <?php } ?>
+                
             </section>
         <?php } ?>
+        </div>
     </main>
 
     <footer>

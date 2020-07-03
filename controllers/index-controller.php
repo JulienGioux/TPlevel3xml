@@ -59,12 +59,12 @@ if (isset($_POST) && !empty($_POST)) {
         setcookie("rssChoice", json_encode($rssChoice), time()+31556926 ,'/');       
      }
 }
-if (isset($_POST) && !empty($_POST) && $testCookie) {
-    header("Location: $_SERVER[PHP_SELF]");
-}
+// if (isset($_POST) && !empty($_POST) && $testCookie) {
+//     header("Location: $_SERVER[PHP_SELF]");
+// }
 
 $articlesNumber = $_POST['articlesNumber'] ?? $_COOKIE['articlesNumber'] ?? 3;
-$rssChoice = $rssChoice ?? json_decode($_COOKIE['rssChoice']) ?? [$urlActu, $urlSecu, $urlApps];
+$rssChoice = json_decode($_COOKIE['rssChoice']) ?? [$urlActu, $urlSecu, $urlApps];
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
 function sortItem($rss,$i,$el) {
     $item = $rss->channel->item[$i];
