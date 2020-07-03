@@ -64,7 +64,11 @@ if (isset($_POST) && !empty($_POST)) {
 // }
 
 $articlesNumber = $_POST['articlesNumber'] ?? $_COOKIE['articlesNumber'] ?? 3;
-$rssChoice = json_decode($_COOKIE['rssChoice']) ?? [$urlActu, $urlSecu, $urlApps];
+if (isset($_COOKIE['rssChoice'])) {
+    $rssChoice = json_decode($_COOKIE['rssChoice']);
+} elseif (!isset($rssChoice)) {
+    $rssChoice = [$urlActu, $urlSecu, $urlApps];
+}
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
 function sortItem($rss,$i,$el) {
     $item = $rss->channel->item[$i];
