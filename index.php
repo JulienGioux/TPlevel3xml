@@ -42,7 +42,7 @@
         <div class="row">
             <?php
             foreach ($rssChoice as $key => $value) { ?>
-                <section class="col my-3"><?= $rss = simplexml_load_file($value) ?>
+                <section class="col-sm my-3"><?= $rss = simplexml_load_file($value) ?>
                     <?php
                     for ($i = 0; $i < $articlesNumber; $i++) { ?>
                         <div class="media bg-light p-3 border border-bottom shadow">
@@ -50,7 +50,7 @@
                                 <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mr-3" alt="...">
                                 <div class="media-body mb-3">
                                     <div class="row">
-                                        <div class="col-sm-12 h6 mb-4"><?= sortItem($rss, $i, 'title') ?></div>
+                                        <div class="col h6 mb-4"><?= sortItem($rss, $i, 'title') ?></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -133,7 +133,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-warning">
-                    <div class="modal-title text-white h6" id="exampleModalLabel"><?= $date ?></div>
+                    <div class="modal-title text-white h6" id="exampleModalLabel"><?= sortItem($rss, $i, 'pubDate') ?></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -141,13 +141,13 @@
                 <form id="params" action="index.php" method="post">
                     <div class="modal-body mt-2">
 
-                        <div class="row text-center h5 mb-3 font-weith-bold"><?= $title ?></div>
-                        <div class="row h6 m-1"><?= $desc ?></div>
+                        <div class="row text-center h5 mb-3 font-weith-bold"><?= sortItem($rss, $i, 'title') ?></div>
+                        <div class="row h6 m-1"><?= sortItem($rss, $i, 'description') ?></div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button type="submit" class="btn btn-warning" name="submit">Aller vers l'article</button>
+                        <button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
                     </div>
                 </form>
             </div>

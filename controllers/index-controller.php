@@ -80,7 +80,6 @@ function sortItem($rss,$i,$el) {
 
 }
 
-
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
 // foreach ($rssChoice as $key => $value) {
 //     $rss = simplexml_load_file($value);
