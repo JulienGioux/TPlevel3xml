@@ -7,32 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
-    <link rel="stylesheet" href="<?= $css ?>">
+    <link rel="stylesheet" href="<?= isset($_COOKIE["colorTheme"]) ? $_COOKIE["colorTheme"] : "assets/css/defcolor.css" ?>">
     <title>Accueil</title>
 </head>
 
 <body>
-    <header class="d-flex align-items-center justify-content-center bg-warning">
+    <header class="d-flex align-items-center justify-content-center">
         <p class="h1">SUPER RSS READER</p>
         <div><img src="assets\img\rss-logo-icon-png-11302.png" alt="icon_fluxrss" class="iconFlux"></div>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <nav class="navbar navbar-expand-lg shadow">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Sujet 1</a>
+                    <a class="nav-link navText" href="#">Sujet 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sujet2</a>
+                    <a class="nav-link navText" href="#">Sujet2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sujet 3</a>
+                    <a class="nav-link navText" href="#">Sujet 3</a>
                 </li>
             </ul>
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#parametersModal">
+            <button type="button" class="btn buttonParamaters" data-toggle="modal" data-target="#parametersModal">
                 Paramètres
             </button>
         </div>
@@ -70,37 +70,38 @@
                     </div>
                     <form id="params" action="index.php" method="post">
                         <div class="modal-body">
-
-                            <div class="row">
-                                <div class="col">
-                                    <label for="themeColor">Thème</label>
-                                    <select class="form-control" id="colorTheme" name="colorTheme">
-                                        <option value="black">Noir</option>
-                                        <option value="blue">Bleu</option>
-                                        <option value="Red">Rouge</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <label for="articlesNumber">Nombre d'articles</label>
-                                    <select class="form-control" id="artcilesNumber" name="articlesNumber">
-                                        <option value="3">3</option>
-                                        <option value="5">5</option>
-                                        <option value="8">8</option>>
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <legend class="col-form-label col">Sujets</legend>
-                                    <div>
-                                        <input type="checkbox" id="actuCheck" name="subCheck[]" value="<?= $urlActu ?>" checked="true">
-                                        <label for="actuCheck">Actualités</label><br>
-                                        <input type="checkbox" id="secuCheck" name="subCheck[]" value="<?= $urlSecu ?>" checked="true">
-                                        <label for="secuCheck"> Sécurité</label><br>
-                                        <input type="checkbox" id="appliCheck" name="subCheck[]" value="<?= $urlApps ?>" checked="true">
-                                        <label for="appliCheck"> Applications</label><br>
-                                        <input type="checkbox" id="technoCheck" name="subCheck[]" value="<?= $urlTech ?>">
-                                        <label for="technoCheck">Technologie</label><br>
-                                        <input type="checkbox" id="buzzCheck" name="subCheck[]" value="<?= $urlBuzz ?>">
-                                        <label for="buzzCheck">Buzz</label><br>
+                            
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="themeColor">Thème</label>
+                                        <select class="form-control" id="colorTheme" name="colorTheme">
+                                            <option value="black">Noir</option>
+                                            <option value="blue">Bleu</option>
+                                            <option value="red">Rouge</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="articlesNumber">Nombre d'articles</label>
+                                        <select class="form-control" id="artcilesNumber" name="articlesNumber">
+                                            <option value="3">3</option>
+                                            <option value="5">5</option>
+                                            <option value="8">8</option>>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <legend class="col-form-label col">Sujets</legend>
+                                        <div>
+                                            <input type="checkbox" id="actuCheck" name="subCheck[]" value="<?=$urlActu?>" checked="true">
+                                            <label for="actuCheck">Actualités</label><br>
+                                            <input type="checkbox" id="secuCheck" name="subCheck[]" value="<?=$urlSecu?>" checked="true">
+                                            <label for="secuCheck"> Sécurité</label><br>
+                                            <input type="checkbox" id="appliCheck" name="subCheck[]" value="<?=$urlApps?>" checked="true">
+                                            <label for="appliCheck"> Applications</label><br>
+                                            <input type="checkbox" id="technoCheck" name="subCheck[]" value="<?=$urlTech?>">
+                                            <label for="technoCheck">Technologie</label><br>
+                                            <input type="checkbox" id="buzzCheck" name="subCheck[]" value="<?=$urlBuzz?>">
+                                            <label for="buzzCheck">Buzz</label><br>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -132,8 +133,11 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="assets/js/testCheckBox.js"></script>
+<<<<<<< HEAD
 <script>
     document.cookie = "username=John Smith;";
 </script> <!-- teste création cookie en javascript -->
 
+=======
+>>>>>>> a93d3c87a6f6f85c4bd67757741aac876991a570
 </html>

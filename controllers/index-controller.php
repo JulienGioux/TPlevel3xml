@@ -1,17 +1,19 @@
 <?php
 //Test si le navigateur accept les cookies
 if (isset($_COOKIE["test"])) {
-print "Cookies activés.";
+    print "Cookies existant.";
+} else {
+    setcookie("test", "ok", time()+3600*24*365);
+}
+
+if (isset($_COOKIE["test"])) {
+    print "Cookies test créé.";
 }
 else {
-    setcookie("test", "black", 0);
-    if (isset($_COOKIE["test"])) {
-    print "Cookies test créé.";
-    }
-    else {
-        print "Cookies refusés.";
-    }
+    print "Cookies refusés.";
 }
+
+
 //initialisation
 setlocale(LC_TIME, 'french.UTF-8, fr-FR.UTF-8', 'fr.UTF-8', 'fra.UTF-8', 'fr_FR.UTF-8');
 date_default_timezone_set('Europe/Paris');
@@ -20,16 +22,37 @@ $urlSecu = "https://www.01net.com/rss/actualites/securite/";
 $urlApps = "https://www.01net.com/rss/actualites/applis-logiciels/";
 $urlTech = "https://www.01net.com/rss/actualites/technos/";
 $urlBuzz = "https://www.01net.com/rss/actualites/buzz-societe/";
+
+$rssDefChoice = [$urlActu, $urlSecu, $urlApps];
+
+$rssActu = simplexml_load_file($urlActu);
+
+$item = $rssActu->channel->item[1];
+$title = $item->title;
+$desc = $item->description;
+$link = $item->link;
+$date = $item->pubDate;
+$img = $item->enclosure;
 $rssChoice = [$urlActu, $urlSecu, $urlApps];
 $articlesNumber=3;
-$css = "assets/css/defcolor.css";
+$css = "";
 
 //Traite les données de formulaire, besoin de vérifs supplémentaires
 if (isset($_POST) && !empty($_POST)) {
     if (isset($_POST['colorTheme']) && !empty($_POST['colorTheme'])) {
-        $colorTheme = $_POST['colorTheme'];
-    } else {
-        $colorTheme='Black';
+            if($_POST["colorTheme"] == 'black') {
+                $css = 'assets/css/blackTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            } else if ($_POST["colorTheme"] == 'red') {
+                $css = 'assets/css/redTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            } else if ($_POST["colorTheme"] == 'blue') {
+                $css = 'assets/css/blueTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            }
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
         $articlesNumber = intval($_POST['articlesNumber']);
@@ -52,24 +75,26 @@ function sortItem($rss,$i,$el) {
 
         if ($el == 'pubDate') {
             $res = strftime('%c',strtotime($item->$el));
+        } elseif ($el == 'img'){
+            $res = $item->enclosure['url'];
         } else {
             $res = $item->$el;
         }
     return $res;
-}
 
+}
 
 
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
-foreach ($rssChoice as $key => $value) {
-    $rss = simplexml_load_file($value);
-    for ($i=0; $i < $articlesNumber ; $i++) { 
-        echo sortItem($rss,$i,'title') . '<br>';
-        echo sortItem($rss,$i,'description') . '<br>';
-        echo sortItem($rss,$i,'link') . '<br>';
-        echo sortItem($rss,$i,'pubDate') . '<br>';
-        echo sortItem($rss,$i,'enclosure') . '<br>';
-        echo '<br>';
-    }
-
-}
+// foreach ($rssChoice as $key => $value) {
+//     $rss = simplexml_load_file($value);
+//     for ($i=0; $i < $articlesNumber ; $i++) {
+        
+//         echo sortItem($rss,$i,'title') . '<br>';
+//         echo sortItem($rss,$i,'description') . '<br>';
+//         echo sortItem($rss,$i,'link') . '<br>';
+//         echo sortItem($rss,$i,'pubDate') . '<br>';
+//         echo sortItem($rss,$i,'img') . '<br>';
+//         echo '<br>';
+//     }
+// }
