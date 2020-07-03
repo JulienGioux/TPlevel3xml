@@ -43,15 +43,15 @@ if (isset($_POST) && !empty($_POST)) {
             if($_POST["colorTheme"] == 'black') {
                 $css = 'assets/css/blackTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                header("Location: $_SERVER[PHP_SELF]");
+                // header("Location: $_SERVER[PHP_SELF]");
             } else if ($_POST["colorTheme"] == 'red') {
                 $css = 'assets/css/redTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                header("Location: $_SERVER[PHP_SELF]");
+                // header("Location: $_SERVER[PHP_SELF]");
             } else if ($_POST["colorTheme"] == 'blue') {
                 $css = 'assets/css/blueTheme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-                header("Location: $_SERVER[PHP_SELF]");
+                // header("Location: $_SERVER[PHP_SELF]");
             }
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
