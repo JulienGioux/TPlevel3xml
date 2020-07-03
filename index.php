@@ -95,7 +95,7 @@
                                 <select class="form-control" id="artcilesNumber" name="articlesNumber">
                                     <option value="3">3</option>
                                     <option value="5">5</option>
-                                    <option value="8">8</option>>
+                                    <option value="8">8</option>
                                 </select>
                             </div>
                             <div class="col">
