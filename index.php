@@ -42,7 +42,8 @@
     <div class="row">
         <?php
         foreach ($rssChoice as $key => $value) { ?>
-            <section class="topic col-sm-4 justify-content-center"><?= $rss = simplexml_load_file($value) ?>
+            <section class="topic col"><?= $rss = simplexml_load_file($value) ?>
+            
                 <?php
                 for ($i = 0; $i < $articlesNumber; $i++) { ?>
                     <div class="topicMedia media bg-light p-3 ">
@@ -57,9 +58,10 @@
                         </ul>
                     </div>
                 <?php } ?>
+                
             </section>
         <?php } ?>
-                </div>
+        </div>
     </main>
 
     <footer>
