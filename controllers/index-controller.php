@@ -22,16 +22,37 @@ $urlSecu = "https://www.01net.com/rss/actualites/securite/";
 $urlApps = "https://www.01net.com/rss/actualites/applis-logiciels/";
 $urlTech = "https://www.01net.com/rss/actualites/technos/";
 $urlBuzz = "https://www.01net.com/rss/actualites/buzz-societe/";
+
+$rssDefChoice = [$urlActu, $urlSecu, $urlApps];
+
+$rssActu = simplexml_load_file($urlActu);
+
+$item = $rssActu->channel->item[1];
+$title = $item->title;
+$desc = $item->description;
+$link = $item->link;
+$date = $item->pubDate;
+$img = $item->enclosure;
 $rssChoice = [$urlActu, $urlSecu, $urlApps];
 $articlesNumber=3;
-$css = "assets/css/defcolor.css";
+$css = "";
 
 //Traite les données de formulaire, besoin de vérifs supplémentaires
 if (isset($_POST) && !empty($_POST)) {
     if (isset($_POST['colorTheme']) && !empty($_POST['colorTheme'])) {
-        $colorTheme = $_POST['colorTheme'];
-    } else {
-        $colorTheme='black';
+            if($_POST["colorTheme"] == 'black') {
+                $css = 'assets/css/blackTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            } else if ($_POST["colorTheme"] == 'red') {
+                $css = 'assets/css/redTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            } else if ($_POST["colorTheme"] == 'blue') {
+                $css = 'assets/css/blueTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            }
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
         $articlesNumber = intval($_POST['articlesNumber']);
@@ -62,8 +83,7 @@ function sortItem($rss,$i,$el) {
     return $res;
 
 }
-$rss = simplexml_load_file($rssChoice[0]);
-echo sortItem($rss,1,'img');
+
 
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
 // foreach ($rssChoice as $key => $value) {
