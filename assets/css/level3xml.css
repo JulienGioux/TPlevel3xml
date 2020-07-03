@@ -9,9 +9,6 @@ header {
     margin-left : 1rem;
 }
 
-.topic .topicMedia {
-    width: auto;
-}
 
 .imgMedia {
     width: 100px;
@@ -19,4 +16,9 @@ header {
 
 .media-body img {
 display: none;
+}
+
+.iconSearch {
+    height: auto;
+    width: 30px;
 }

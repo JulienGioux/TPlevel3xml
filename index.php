@@ -38,29 +38,33 @@
         </div>
     </nav>
 
-    <main class="container-fluid">
-    <div class="row">
-        <?php
-        foreach ($rssChoice as $key => $value) { ?>
-            <section class="topic col"><?= $rss = simplexml_load_file($value) ?>
-            
-                <?php
-                for ($i = 0; $i < $articlesNumber; $i++) { ?>
-                    <div class="topicMedia media bg-light p-3 ">
-                        <ul class="list-unstyled">
-                            <li class="media">
+    <main class="container-fluid p-3">
+        <div class="row">
+            <?php
+            foreach ($rssChoice as $key => $value) { ?>
+                <section class="col my-3"><?= $rss = simplexml_load_file($value) ?>
+                    <?php
+                    for ($i = 0; $i < $articlesNumber; $i++) { ?>
+                        <div class="media bg-light p-3 border border-bottom shadow">
+                            <div class="media">
                                 <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mr-3" alt="...">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1 "><?= sortItem($rss, $i, 'title') ?></h5>
-                                    <?= sortItem($rss, $i, 'description') ?>
+                                <div class="media-body mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-12 h6 mb-4"><?= sortItem($rss, $i, 'title') ?></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6"><button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-target="#articlesModal">Détails</button>
+                                        </div>
+                                        <div class="col-sm-6"><button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                <?php } ?>
-                
-            </section>
-        <?php } ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </section>
+
+            <?php } ?>
         </div>
     </main>
 
