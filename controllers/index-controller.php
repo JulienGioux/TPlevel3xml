@@ -85,7 +85,7 @@ function sortItem($rss,$i,$el) {
     return $res;
 
 }
-
+var_dump($rssChoice);
 
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
 // foreach ($rssChoice as $key => $value) {

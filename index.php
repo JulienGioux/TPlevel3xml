@@ -41,10 +41,10 @@
     <main>
         <?php
         foreach ($rssChoice as $key => $value) { ?>
-            <section class="firstSubject row-sm-12 mx-auto m-5"><?= $rss = simplexml_load_file($value) ?>
+            <section class="firstSubject col-sm-4 mx-auto m-5"><?= $rss = simplexml_load_file($value) ?>
             <?php
             for ($i = 0; $i < $articlesNumber; $i++) { ?>
-                <div class="media col-sm-8 bg-light shadow border-top border-secondary p-3">
+                <div class="media row-sm-6 bg-light shadow border-top border-secondary p-3">
                     <ul class="list-unstyled">
                         <li class="media">
                             <img src="<?= sortItem($rss, $i, 'enclosure') ?>" class="media-object mr-3" alt="...">
