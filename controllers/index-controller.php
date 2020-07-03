@@ -1,17 +1,17 @@
 <?php
 //Test si le navigateur accept les cookies
-if (isset($_COOKIE["theme"])) {
+if (isset($_COOKIE["test"])) {
 print "Cookies activés.";
 }
 else {
-    if (isset($_REQUEST["testeur"])) {
-    print "Cookies désactivés.";
+    setcookie("test", "black", 0);
+    if (isset($_COOKIE["test"])) {
+    print "Cookies test créé.";
     }
-    else {setcookie("theme", "black", 0, "/");
-    header("Location: $_SERVER[PHP_SELF]?testeur=1");
+    else {
+        print "Cookies refusés.";
     }
 }
-var_dump($_COOKIE['theme']);
 //initialisation
 setlocale(LC_TIME, 'french.UTF-8, fr-FR.UTF-8', 'fr.UTF-8', 'fra.UTF-8', 'fr_FR.UTF-8');
 date_default_timezone_set('Europe/Paris');
