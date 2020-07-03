@@ -41,6 +41,8 @@ if (isset($_POST) && !empty($_POST)) {
         } else if ($_POST["articlesNumber"] == '8') {
             $articlesNumber = intval($_POST['articlesNumber']);
             setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+        } else {
+            $articlesNumber = 3;
         }
     }
     if (isset($_POST['subCheck']) && !empty($_POST['subCheck'])) {
@@ -51,9 +53,7 @@ if (isset($_POST) && !empty($_POST)) {
         setcookie("rssChoice", json_encode($rssChoice), time()+31556926 ,'/');       
      }
 }
-// if (isset($_POST) && !empty($_POST) && $testCookie) {
-//     header("Location: $_SERVER[PHP_SELF]");
-// }
+
 if (!isset($css)) {
     $css = $_POST['colorTheme'] ?? $_COOKIE['colorTheme'] ?? 'assets/css/blackTheme.css';
 }

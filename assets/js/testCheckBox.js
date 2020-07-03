@@ -8,7 +8,9 @@ function testCheckbox() {
        }
        checkBox[i].disabled = false;
    }
-
+   if(j<=0) {
+        checkBox[0].checked = true;
+    }
    if(j>2) {       
        checkBox.forEach(el => {
            
@@ -17,6 +19,7 @@ function testCheckbox() {
            }
        });
    }
+
 }
 checkBox.forEach(element => {
    element.addEventListener('click', function(){
