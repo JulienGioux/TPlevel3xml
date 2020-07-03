@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
-    <link rel="stylesheet" href="<?= isset($_COOKIE["colorTheme"]) ? $_COOKIE["colorTheme"] : "assets/css/defcolor.css" ?>">
+    <link rel="stylesheet" href="<?= $_POST['colorTheme'] ?? $_COOKIE["colorTheme"] ?? "assets/css/defcolor.css"; ?>">
     <title>Accueil</title>
 </head>
 
@@ -44,13 +44,13 @@
             <section class="topic row m-5 justify-content-center"><?= $rss = simplexml_load_file($value) ?>
                 <?php
                 for ($i = 0; $i < $articlesNumber; $i++) { ?>
-                    <div class="col-sm-8 topicMedia media bg-light shadow p-3 ">
+                    <div class="col-sm-8 topicMedia media bg-light p-3 ">
                         <ul class="list-unstyled">
                             <li class="media">
                                 <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mr-3" alt="...">
                                 <div class="media-body">
-                                    <p class="h5 mt-0 mb-1 "><?= sortItem($rss, $i, 'title') ?></p>
-                                    <p><?= sortItem($rss, $i, 'description') ?></p>
+                                    <h5 class="mt-0 mb-1 "><?= sortItem($rss, $i, 'title') ?></h5>
+                                    <?= sortItem($rss, $i, 'description') ?>
                                 </div>
                             </li>
                         </ul>
@@ -58,7 +58,6 @@
                 <?php } ?>
             </section>
         <?php } ?>
-
     </main>
 
     <footer>
