@@ -61,7 +61,7 @@ if (!isset($css)) {
 $articlesNumber = $_POST['articlesNumber'] ?? $_COOKIE['articlesNumber'] ?? 3;
 if (isset($_COOKIE['rssChoice']) && empty($_POST)) {
     $rssChoice = json_decode($_COOKIE['rssChoice']);
-} elseif (!$testCookie && !$rssChoice) {
+} elseif (!$testCookie && !isset($rssChoice)) {
     $rssChoice = [$urlActu, $urlSecu, $urlApps];
 }
 
