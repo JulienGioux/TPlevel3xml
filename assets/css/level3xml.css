@@ -8,3 +8,16 @@ header {
     width: 30px;
     margin-left : 1rem;
 }
+
+.topic .topicMedia {
+    height: 10rem;
+    width: auto;
+}
+
+.imgMedia {
+    width: 100px;
+}
+
+.media-body img {
+visibility: hidden;
+}
