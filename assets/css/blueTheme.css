@@ -1,3 +1,24 @@
 body {
-    background-color: blue;
+    background-color: #cfdee7;
+}
+
+header {
+    background-color: #07a0c3;
+}
+
+.h1 {
+    color: #f0c808;
+}
+
+nav {
+    background-color: #086788;
+}
+
+.navText {
+    color: #ffffff;
+}
+
+.buttonParamaters {
+    background-color: #ffffff;
+    color: #086788;
 }

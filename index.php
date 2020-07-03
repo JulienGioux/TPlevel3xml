@@ -1,4 +1,4 @@
-<?php require_once "controllers/index-controller.php"?>
+<?php require_once "controllers/index-controller.php" ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,60 +12,51 @@
 </head>
 
 <body>
-    <header class="d-flex align-items-center justify-content-center bg-warning">
+    <header class="d-flex align-items-center justify-content-center">
         <p class="h1">SUPER RSS READER</p>
         <div><img src="assets\img\rss-logo-icon-png-11302.png" alt="icon_flux" class="iconFlux"></div>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <nav class="navbar navbar-expand-lg shadow">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Sujet 1</a>
+                    <a class="nav-link navText" href="#">Sujet 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sujet2</a>
+                    <a class="nav-link navText" href="#">Sujet2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sujet 3</a>
+                    <a class="nav-link navText" href="#">Sujet 3</a>
                 </li>
             </ul>
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#parametersModal">
+            <button type="button" class="btn buttonParamaters" data-toggle="modal" data-target="#parametersModal">
                 Paramètres
             </button>
         </div>
     </nav>
 
     <main>
-    <!-- loop -->
-    <!-- section -->
-        <div class="firstSubject col-sm-8">
-            <ul class="list-unstyled">
-                <li class="media">
-                    <img src="..." class="mr-3" alt="...">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">List-based media object</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </li>
-                <li class="media my-4">
-                    <img src="..." class="mr-3" alt="...">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">List-based media object</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </li>
-                <li class="media">
-                    <img src="..." class="mr-3" alt="...">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">List-based media object</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <?php
+        foreach ($rssChoice as $key => $value) { ?>
+            <section class="firstSubject row-sm-12 mx-auto m-5"><?= $rss = simplexml_load_file($value) ?></section>
+            <?php
+            for ($i = 0; $i < $articlesNumber; $i++) { ?>
+                <div class="media col-sm-8 bg-light shadow border-top border-secondary p-3">
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <img src="<?= sortItem($rss, $i, 'enclosure') ?>" class="media-object mr-3" alt="...">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1"><?= sortItem($rss, $i, 'title') ?></h5>
+                                <?= sortItem($rss, $i, 'description') ?>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        <?php }
+        } ?>
 
         <!-- Modal -->
         <div class="modal fade" id="parametersModal" tabindex="-1" role="dialog" aria-labelledby="parametersModal" aria-hidden="true">
@@ -113,7 +104,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
