@@ -36,14 +36,24 @@ $date = $item->pubDate;
 $img = $item->enclosure;
 $rssChoice = [$urlActu, $urlSecu, $urlApps];
 $articlesNumber=3;
-$css = "assets/css/defcolor.css";
+$css = "";
 
 //Traite les données de formulaire, besoin de vérifs supplémentaires
 if (isset($_POST) && !empty($_POST)) {
     if (isset($_POST['colorTheme']) && !empty($_POST['colorTheme'])) {
-        $colorTheme = $_POST['colorTheme'];
-    } else {
-        $colorTheme='black';
+            if($_POST["colorTheme"] == 'black') {
+                $css = 'assets/css/blackTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            } else if ($_POST["colorTheme"] == 'red') {
+                $css = 'assets/css/redTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            } else if ($_POST["colorTheme"] == 'blue') {
+                $css = 'assets/css/blueTheme.css';
+                setcookie("colorTheme", $css, time()+31556926 ,'/');
+                header("Location: $_SERVER[PHP_SELF]");
+            }
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
         $articlesNumber = intval($_POST['articlesNumber']);
@@ -74,28 +84,6 @@ function sortItem($rss,$i,$el) {
 
 echo $title, $desc, $link, $date, $img;
 var_dump($item);
-
-$css = "";
-if (isset($_POST["submit"])) {
-    if(isset($_POST["colorTheme"])) {
-        if($_POST["colorTheme"] == 'black') {
-            $css = 'assets/css/blackTheme.css';
-            setcookie("colorTheme", $css, time()+31556926 ,'/');
-            header("Location: $_SERVER[PHP_SELF]");
-        } else if ($_POST["colorTheme"] == 'red') {
-            $css = 'assets/css/redTheme.css';
-            setcookie("colorTheme", $css, time()+31556926 ,'/');
-            header("Location: $_SERVER[PHP_SELF]");
-        } else if ($_POST["colorTheme"] == 'blue') {
-            $css = 'assets/css/blueTheme.css';
-            setcookie("colorTheme", $css, time()+31556926 ,'/');
-            header("Location: $_SERVER[PHP_SELF]");
-        }
-    }
-}
-
-
-
 
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
 foreach ($rssChoice as $key => $value) {

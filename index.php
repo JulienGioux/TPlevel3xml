@@ -12,27 +12,27 @@
 </head>
 
 <body>
-    <header class="d-flex align-items-center justify-content-center bg-warning">
+    <header class="d-flex align-items-center justify-content-center">
         <p class="h1">SUPER RSS READER</p>
         <div><img src="assets\img\rss-logo-icon-png-11302.png" alt="icon_fluxrss" class="iconFlux"></div>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <nav class="navbar navbar-expand-lg shadow">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Sujet 1</a>
+                    <a class="nav-link navText" href="#">Sujet 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sujet2</a>
+                    <a class="nav-link navText" href="#">Sujet2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sujet 3</a>
+                    <a class="nav-link navText" href="#">Sujet 3</a>
                 </li>
             </ul>
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#parametersModal">
+            <button type="button" class="btn buttonParamaters" data-toggle="modal" data-target="#parametersModal">
                 Paramètres
             </button>
         </div>
