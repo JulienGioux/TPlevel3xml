@@ -57,7 +57,7 @@ if (isset($_POST) && !empty($_POST)) {
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
         $articlesNumber = intval($_POST['articlesNumber']);
     } else {
-        $articlesNumber=8;
+        $articlesNumber=3;
     }
     if (isset($_POST['subCheck']) && !empty($_POST['subCheck'])) {
         $rssChoice = [];
