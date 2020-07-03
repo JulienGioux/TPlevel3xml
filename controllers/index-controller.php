@@ -34,8 +34,7 @@ $link = $item->link;
 $date = $item->pubDate;
 $img = $item->enclosure;
 $rssChoice = [$urlActu, $urlSecu, $urlApps];
-$articlesNumber = 3;
-$css = "";
+$css = 'assets/css/blackTheme.css';
 
 //Traite les données de formulaire, besoin de vérifs supplémentaires
 if (isset($_POST) && !empty($_POST)) {
@@ -75,6 +74,9 @@ if (isset($_POST) && !empty($_POST)) {
 if (isset($_POST) && !empty($_POST) && $testCookie) {
     header("Location: $_SERVER[PHP_SELF]");
 }
+
+$articlesNumber = $_POST['articlesNumber'] ?? $_COOKIE['articlesNumber'] ?? 3;
+
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
 function sortItem($rss,$i,$el) {
     $item = $rss->channel->item[$i];
