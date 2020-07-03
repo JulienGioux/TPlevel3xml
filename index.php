@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
-    <link rel="stylesheet" href="<?= $_POST['colorTheme'] ?? $_COOKIE["colorTheme"] ?? "assets/css/defcolor.css"; ?>">
+    <link rel="stylesheet" href="<?=$css?>">
     <title>Accueil</title>
 </head>
 
@@ -38,30 +38,28 @@
         </div>
     </nav>
 
-    <main>
+    <main class="container-fluid">
+    <div class="row">
         <?php
         foreach ($rssChoice as $key => $value) { ?>
-            <section class="firstSubject col-sm-4 mx-auto m-5"><?= $rss = simplexml_load_file($value) ?>
-            <?php
-            for ($i = 0; $i < $articlesNumber; $i++) { ?>
-                <div class="media row-sm-6 bg-light shadow border-top border-secondary p-3">
-                    <ul class="list-unstyled">
-                        <li class="media">
-                            <img src="<?= sortItem($rss, $i, 'enclosure') ?>" class="media-object mr-3" alt="...">
-                            <div class="media-body">
-                                <h5 class="mt-0 mb-1"><?= sortItem($rss, $i, 'title') ?></h5>
-                                <?= sortItem($rss, $i, 'description') ?>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <section class="topic col-sm-4 justify-content-center"><?= $rss = simplexml_load_file($value) ?>
+                <?php
+                for ($i = 0; $i < $articlesNumber; $i++) { ?>
+                    <div class="topicMedia media bg-light p-3 ">
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mr-3" alt="...">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1 "><?= sortItem($rss, $i, 'title') ?></h5>
+                                    <?= sortItem($rss, $i, 'description') ?>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                <?php } ?>
+            </section>
         <?php } ?>
-        </section>
-    <?php } ?>
-
-
-
-
+                </div>
     </main>
 
     <footer>
@@ -92,10 +90,10 @@
                             </div>
                             <div class="col">
                                 <label for="articlesNumber">Nombre d'articles</label>
-                                <select class="form-control" id="artcilesNumber" name="articlesNumber">
+                                <select class="form-control" id="articlesNumber" name="articlesNumber">
                                     <option value="3">3</option>
                                     <option value="5">5</option>
-                                    <option value="8">8</option>>
+                                    <option value="8">8</option>
                                 </select>
                             </div>
                             <div class="col">
