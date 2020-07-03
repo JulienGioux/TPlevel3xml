@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
-    <link rel="stylesheet" href="<?=$css?>">
+    <link rel="stylesheet" href="<?= isset($_COOKIE["colorTheme"]) ? $_COOKIE["colorTheme"] : "assets/css/defcolor.css" ?>">
     <title>Accueil</title>
 </head>
 
@@ -76,14 +76,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="index.php" method="post">
+                        <form action="" method="post">
                             <div class="row">
                                 <div class="col">
                                     <label for="themeColor">Thème</label>
                                     <select class="form-control" id="colorTheme" name="colorTheme">
                                         <option value="black">Noir</option>
                                         <option value="blue">Bleu</option>
-                                        <option value="Red">Rouge</option>
+                                        <option value="red">Rouge</option>
                                     </select>
                                 </div>
                                 <div class="col">
@@ -91,7 +91,7 @@
                                     <select class="form-control" id="artcilesNumber" name="articlesNumber">
                                         <option value="threeArtciles">3</option>
                                         <option value="fiveArtciles">5</option>
-                                        <option value="eightArtciles">8</option>>
+                                        <option value="eightArtciles">8</option>
                                     </select>
                                 </div>
                                 <div class="col">
@@ -110,11 +110,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <input type="submit" class="btn btn-warning" name="submit" value="Sauvegarder">
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button type="button" class="btn btn-warning" name="submit">Sauvegarder</button>
+                        
                     </div>
                 </div>
             </div>
