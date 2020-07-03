@@ -1,14 +1,13 @@
 <?php
 //Test si le navigateur accept les cookies
 if (isset($_COOKIE["test"])) {
-    print "Cookies activés.";
+    print "Cookies existant.";
 } else {
     setcookie("test", "ok", time()+3600*24*365);
-    header("Location: $_SERVER[PHP_SELF]");
 }
 
 if (isset($_COOKIE["test"])) {
-print "Cookies test créé.";
+    print "Cookies test créé.";
 }
 else {
     print "Cookies refusés.";
@@ -55,23 +54,27 @@ function sortItem($rss,$i,$el) {
 
         if ($el == 'pubDate') {
             $res = strftime('%c',strtotime($item->$el));
+        } elseif ($el == 'img'){
+            $res = $item->enclosure['url'];
         } else {
             $res = $item->$el;
         }
     return $res;
+
 }
-
-
+$rss = simplexml_load_file($rssChoice[0]);
+echo sortItem($rss,1,'img');
 
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
-foreach ($rssChoice as $key => $value) {
-    $rss = simplexml_load_file($value);
-    for ($i=0; $i < $articlesNumber ; $i++) {
-        echo sortItem($rss,$i,'title') . '<br>';
-        echo sortItem($rss,$i,'description') . '<br>';
-        echo sortItem($rss,$i,'link') . '<br>';
-        echo sortItem($rss,$i,'pubDate') . '<br>';
-        echo sortItem($rss,$i,'enclosure') . '<br>';
-        echo '<br>';
-    }
-}
+// foreach ($rssChoice as $key => $value) {
+//     $rss = simplexml_load_file($value);
+//     for ($i=0; $i < $articlesNumber ; $i++) {
+        
+//         echo sortItem($rss,$i,'title') . '<br>';
+//         echo sortItem($rss,$i,'description') . '<br>';
+//         echo sortItem($rss,$i,'link') . '<br>';
+//         echo sortItem($rss,$i,'pubDate') . '<br>';
+//         echo sortItem($rss,$i,'img') . '<br>';
+//         echo '<br>';
+//     }
+// }
