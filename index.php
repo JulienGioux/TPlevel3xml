@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
-    <link rel="stylesheet" href="<?=$css?>">
+    <link rel="stylesheet" href="<?= $css ?>">
     <title>Accueil</title>
 </head>
 
@@ -53,8 +53,9 @@
                                         <div class="col h6 mb-4"><?= sortItem($rss, $i, 'title') ?></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col"><button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-target="#articlesModal">Détails</button>
-                                        <button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-target="#articlesModal">Détails</button>
+                                            <button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
                                         </div>
                                     </div>
                                 </div>

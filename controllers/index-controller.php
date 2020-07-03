@@ -22,22 +22,14 @@ $urlApps = "https://www.01net.com/rss/actualites/applis-logiciels/";
 $urlTech = "https://www.01net.com/rss/actualites/technos/";
 $urlBuzz = "https://www.01net.com/rss/actualites/buzz-societe/";
 
+$cssPath = 'assets/css/';
 
-$css = 'assets/css/blackTheme.css';
 
 //Traite les données de formulaire, besoin de vérifs supplémentaires
 if (isset($_POST) && !empty($_POST)) {
     if (isset($_POST['colorTheme']) && !empty($_POST['colorTheme'])) {
-            if($_POST["colorTheme"] == 'black') {
-                $css = 'assets/css/blackTheme.css';
+                $css = $cssPath . $_POST["colorTheme"] . 'Theme.css';
                 setcookie("colorTheme", $css, time()+31556926 ,'/');
-            } else if ($_POST["colorTheme"] == 'red') {
-                $css = 'assets/css/redTheme.css';
-                setcookie("colorTheme", $css, time()+31556926 ,'/');
-            } else if ($_POST["colorTheme"] == 'blue') {
-                $css = 'assets/css/blueTheme.css';
-                setcookie("colorTheme", $css, time()+31556926 ,'/');
-            }
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
         if($_POST["articlesNumber"] == '3') {
@@ -62,13 +54,17 @@ if (isset($_POST) && !empty($_POST)) {
 // if (isset($_POST) && !empty($_POST) && $testCookie) {
 //     header("Location: $_SERVER[PHP_SELF]");
 // }
+if (!isset($css)) {
+    $css = $_POST['colorTheme'] ?? $_COOKIE['colorTheme'] ?? 'assets/css/blackTheme.css';
+}
 
 $articlesNumber = $_POST['articlesNumber'] ?? $_COOKIE['articlesNumber'] ?? 3;
-if (isset($_COOKIE['rssChoice'])) {
+if (isset($_COOKIE['rssChoice']) && empty($_POST)) {
     $rssChoice = json_decode($_COOKIE['rssChoice']);
-} elseif (!isset($rssChoice)) {
+} elseif (!$testCookie && !$rssChoice) {
     $rssChoice = [$urlActu, $urlSecu, $urlApps];
 }
+
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
 function sortItem($rss,$i,$el) {
     $item = $rss->channel->item[$i];
