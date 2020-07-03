@@ -14,7 +14,7 @@
 <body>
     <header class="d-flex align-items-center justify-content-center bg-warning">
         <p class="h1">SUPER RSS READER</p>
-        <div><img src="assets\img\rss-logo-icon-png-11302.png" alt="icon_fluxrss" class="iconFlux"></div>
+        <div><img src="assets\img\rss-logo-icon-png-11302.png" alt="icon_flux" class="iconFlux"></div>
     </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
