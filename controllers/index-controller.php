@@ -1,5 +1,5 @@
 <?php
-
+//Test si le navigateur accept les cookies
 if (isset($_COOKIE["theme"])) {
 print "Cookies activés.";
 }
