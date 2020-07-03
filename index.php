@@ -1,10 +1,11 @@
-<?php require_once "assets/controllers/index-controller.php"?>
+<?php require_once "controllers/index-controller.php"?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
     <link rel="stylesheet" href="<?=$css?>">
     <title>Accueil</title>
@@ -87,24 +88,24 @@
                                 </div>
                                 <div class="col">
                                     <label for="themeColor">Nombre d'articles</label>
-                                    <select class="form-control" id="artcilesNumber" name="articlesNumber">
-                                        <option value="threeArtciles">3</option>
-                                        <option value="fiveArtciles">5</option>
-                                        <option value="eightArtciles">8</option>>
+                                    <select class="form-control" id="articlesNumber" name="articlesNumber">
+                                        <option value="threeArticles">3</option>
+                                        <option value="fiveArticles">5</option>
+                                        <option value="eightArticles">8</option>>
                                     </select>
                                 </div>
                                 <div class="col">
                                     <legend class="col-form-label col">Sujets</legend>
                                     <div>
-                                        <input type="checkbox" id="actuCheck" name="subCheck" value="actuCheck">
+                                        <input type="checkbox" id="actuCheck" name="subCheck[]" value="actuCheck">
                                         <label for="actuCheck">Actualités</label><br>
-                                        <input type="checkbox" id="secuCheck" name="subCheck" value="secuCheck">
-                                        <label for="secuCheck"> Sécurité</label><br>
-                                        <input type="checkbox" id="appliCheck" name="subCheck" value="appliCheck">
-                                        <label for="appliCheck"> Applications</label><br>
-                                        <input type="checkbox" id="technoCheck" name="subCheck" value="technoCheck">
+                                        <input type="checkbox" id="secuCheck" name="subCheck[]" value="secuCheck">
+                                        <label for="secuCheck">Sécurité</label><br>
+                                        <input type="checkbox" id="appliCheck" name="subCheck[]" value="appliCheck">
+                                        <label for="appliCheck">Applications</label><br>
+                                        <input type="checkbox" id="technoCheck" name="subCheck[]" value="technoCheck">
                                         <label for="technoCheck">Technologie</label><br>
-                                        <input type="checkbox" id="buzzCheck" name="subCheck" value="buzzCheck">
+                                        <input type="checkbox" id="buzzCheck" name="subCheck[]" value="buzzCheck">
                                         <label for="buzzCheck">Buzz</label><br>
                                     </div>
                                 </div>
