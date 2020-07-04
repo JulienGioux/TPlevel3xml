@@ -8,7 +8,6 @@ $('#articlesModal').on('show.bs.modal', function (event) {
     var artDate = button.data('date');
     var catColor = button.data('catcolor');
     var classCatColor = 'bg-' + catColor;
-    console.log(classCatColor);
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
     var modal = $(this);
