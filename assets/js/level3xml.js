@@ -17,6 +17,8 @@ $('#articlesModal').on('show.bs.modal', function (event) {
     modal.find('.modal-body #desc').text(articleDesc);
     modal.find('.modal-body p').text(artDate);
     modal.find('.modal-footer #articleLink').attr('href', artLink);
+    $('#articleModalHeader').removeClass('bg-primary bg-success bg-danger bg-warning bg-info');
+    $('#articleModalFooter').removeClass('bg-primary bg-success bg-danger bg-warning bg-info');
     $('#articleModalHeader').addClass(classCatColor);
     $('#articleModalFooter').addClass(classCatColor);
   })
