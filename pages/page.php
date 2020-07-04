@@ -18,6 +18,20 @@ if (!isset($_GET['cat'])) {
 } else {
     $classSecCat = 'col';
 }
+switch (count($rssChoice)) {
+    case 1:
+        $classSecCat = 'col';
+        break;
+    case 2:
+        $classSecCat = 'col-md-6';
+        break;
+    case 3:
+        $classSecCat = 'col-lg-4 col-md-6';
+        break;
+    default:
+        $classSecCat = 'col';
+        break;
+}
 
 ?>
 
