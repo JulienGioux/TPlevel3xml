@@ -1,4 +1,4 @@
-<section class="col-lg-4 col-md-6 my-3">
+<section class="<?= (empty($_GET['cat'])) ? 'col-lg-4 col-md-6' : 'col' ?> my-3">
     <?php
     for ($i = 0; $i < $articlesNumber; $i++) {
     ?>
