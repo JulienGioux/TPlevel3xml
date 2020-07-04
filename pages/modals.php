@@ -72,7 +72,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="reset" class="btn btn-secondary btn-sm" data-dismiss="modal">Fermer</button>
                         <button class="btn btn-secondary btn-sm" type="button"><a href="" class="text-white" id="articleLink" target="_blank">lire l'article</a></button>
                     </div>
                 </form>
