@@ -1,4 +1,4 @@
-<section class="col-sm my-3">
+<section class="col-lg-4 col-md-6 my-3">
     <?php
     for ($i = 0; $i < $articlesNumber; $i++) {
     ?>
