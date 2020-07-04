@@ -54,8 +54,8 @@ if (isset($_POST['colorTheme']) && !empty($_POST['colorTheme'])) {
     setcookie("colorTheme", $_POST["colorTheme"], time()+31556926 ,'/');
 }
 // récupère le choix du theme en priorité $_POST, ensuite $_cookie, sinon valeur par défaut
-$cssTheme = $_POST["colorTheme"] ?? $cssThemeCookie ?? 'black';
-$cssTheme = $cssPath . $cssTheme . 'Theme.css'; // pointe vers le fichier css correspondant
+$Theme = $_POST["colorTheme"] ?? $cssThemeCookie ?? 'black';
+$cssTheme = $cssPath . $Theme . 'Theme.css'; // pointe vers le fichier css correspondant
  
 
 //NUMBRE D'ARTICLE AFFICHÉ
@@ -111,6 +111,18 @@ function sortItem($rss,$i,$el) {
             $res = $item->$el;
         }
     return $res;
+}
+
+function isChecked($val, $rssChoice) {
+    if (in_array($val, $rssChoice, true)) {
+        return 'checked="true"';
+    }
+}
+
+function isSelected($val, $userVal) {
+    if ($val === $userVal) {
+        return 'selected';
+    }
 }
 
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.

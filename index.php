@@ -88,31 +88,31 @@
                             <div class="col">
                                 <label for="themeColor">Thème</label>
                                 <select class="form-control" id="colorTheme" name="colorTheme">
-                                    <option value="black">Noir</option>
-                                    <option value="blue">Bleu</option>
-                                    <option value="red">Rouge</option>
+                                    <option value="black" <?= isSelected('black', $Theme) ?>>Noir</option>
+                                    <option value="blue" <?= isSelected('blue', $Theme) ?>>Bleu</option>
+                                    <option value="red" <?= isSelected('red', $Theme) ?>>Rouge</option>
                                 </select>
                             </div>
                             <div class="col">
                                 <label for="articlesNumber">Nombre d'articles</label>
                                 <select class="form-control" id="articlesNumber" name="articlesNumber">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="8">8</option>
+                                    <option value="3" <?= isSelected(3, $articlesNumber) ?>>3</option>
+                                    <option value="5" <?= isSelected(5, $articlesNumber) ?>>5</option>
+                                    <option value="8" <?= isSelected(8, $articlesNumber) ?>>8</option>
                                 </select>
                             </div>
                             <div class="col">
                                 <legend class="col-form-label col">Sujets</legend>
                                 <div>
-                                    <input type="checkbox" id="actuCheck" name="rssChoice[]" value="actu" checked="true">
+                                    <input type="checkbox" id="actuCheck" name="rssChoice[]" value="actu" <?= isChecked('actu', $rssChoice)?>>
                                     <label for="actuCheck">Actualités</label><br>
-                                    <input type="checkbox" id="secuCheck" name="rssChoice[]" value="secu" checked="true">
+                                    <input type="checkbox" id="secuCheck" name="rssChoice[]" value="secu" <?= isChecked('secu', $rssChoice)?>>
                                     <label for="secuCheck"> Sécurité</label><br>
-                                    <input type="checkbox" id="appliCheck" name="rssChoice[]" value="apps" checked="true">
+                                    <input type="checkbox" id="appliCheck" name="rssChoice[]" value="apps" <?= isChecked('apps', $rssChoice)?>>
                                     <label for="appliCheck"> Applications</label><br>
-                                    <input type="checkbox" id="technoCheck" name="rssChoice[]" value="tech">
+                                    <input type="checkbox" id="technoCheck" name="rssChoice[]" value="tech" <?= isChecked('tech', $rssChoice)?>>
                                     <label for="technoCheck">Technologie</label><br>
-                                    <input type="checkbox" id="buzzCheck" name="rssChoice[]" value="buzz">
+                                    <input type="checkbox" id="buzzCheck" name="rssChoice[]" value="buzz" <?= isChecked('buzz', $rssChoice)?>>
                                     <label for="buzzCheck">Buzz</label><br>
                                 </div>
                             </div>
