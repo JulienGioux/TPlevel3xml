@@ -58,7 +58,7 @@
     <div class="modal fade" id="articlesModal" tabindex="-1" role="dialog" aria-labelledby="articlesModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-warning">
+                <div id="articleModalHeader" class="modal-header">
                     <div class="modal-title text-white h6" id="exampleModalLabel"></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -71,7 +71,7 @@
                         <div class="row h6 m-1" id="desc"></div>
 
                     </div>
-                    <div class="modal-footer">
+                    <div id="articleModalFooter" class="modal-footer">
                         <button type="reset" class="btn btn-secondary btn-sm" data-dismiss="modal">Fermer</button>
                         <button class="btn btn-secondary btn-sm" type="button"><a href="" class="text-white" id="articleLink" target="_blank">lire l'article</a></button>
                     </div>

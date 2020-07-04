@@ -6,6 +6,9 @@ $('#articlesModal').on('show.bs.modal', function (event) {
     var artLink = button.data('link');
     var artImg = button.data('img');
     var artDate = button.data('date');
+    var catColor = button.data('catcolor');
+    var classCatColor = 'bg-' + catColor;
+    console.log(classCatColor);
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
     var modal = $(this);
@@ -14,4 +17,6 @@ $('#articlesModal').on('show.bs.modal', function (event) {
     modal.find('.modal-body #desc').text(articleDesc);
     modal.find('.modal-body p').text(artDate);
     modal.find('.modal-footer #articleLink').attr('href', artLink);
+    $('#articleModalHeader').addClass(classCatColor);
+    $('#articleModalFooter').addClass(classCatColor);
   })
