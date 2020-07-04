@@ -1,0 +1,3 @@
+<footer>
+    <!-- mentions légales -->
+</footer>
