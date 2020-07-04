@@ -22,15 +22,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
+                <?php foreach ($rssChoice as $key => $value) {?>
                 <li class="nav-item active">
-                    <a class="nav-link navText" href="#">Sujet 1</a>
+                    <a class="nav-link navText" href="#"><?= $value ?></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link navText" href="#">Sujet2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navText" href="#">Sujet 3</a>
-                </li>
+                <?php } ?>
             </ul>
             <button type="button" class="btn buttonParamaters" data-toggle="modal" data-target="#parametersModal">
                 Paramètres

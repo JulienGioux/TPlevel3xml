@@ -16,6 +16,7 @@ $cssPath = 'assets/css/';
 $exire = time() - 1800; //30 min
 $upload_dir = '../tmp/'; // dossier ou mettre en cache les fichiers xml
 
+// CACHE !!!
 foreach ($urlRss as $cat => $url) {
 
     $cache_file = $upload_dir . $cat . '.xml'; // on nomme le fichier en cache

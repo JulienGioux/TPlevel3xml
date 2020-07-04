@@ -1,4 +1,4 @@
-var checkBox = document.getElementsByName('subCheck[]');
+var checkBox = document.getElementsByName('rssChoice[]');
 
 function testCheckbox() {
     let j=0;
