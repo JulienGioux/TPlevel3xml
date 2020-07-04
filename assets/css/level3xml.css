@@ -2,7 +2,9 @@ header {
     height: 20vh;
     width: auto;
 }
-
+header a:hover {
+    text-decoration: none;
+}
 .iconFlux {
     height: 30px;
     width: 30px;
