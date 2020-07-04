@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/level3xml.css">
-    <link rel="stylesheet" href="<?= $css ?>">
+    <link rel="stylesheet" href="<?= $cssTheme ?>">
     <title>Accueil</title>
 </head>
 
@@ -37,14 +37,17 @@
             </button>
         </div>
     </nav>
-
     <main class="container-fluid p-3">
         <div class="row">
             <?php
-            foreach ($rssChoice as $key => $value) { ?>
-                <section class="col-sm my-3"><?= $rss = simplexml_load_file($value) ?>
+                foreach ($rssChoice as $key => $cat) {
+                    $rss = simplexml_load_file($cache_files[$cat]);
+                
+            ?>
+                <section class="col-sm my-3">
                     <?php
-                    for ($i = 0; $i < $articlesNumber; $i++) { ?>
+                    for ($i = 0; $i < $articlesNumber; $i++) {
+                    ?>
                         <div class="media bg-light p-3 border border-bottom shadow">
                             <div class="media">
                                 <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mr-3" alt="...">
@@ -54,7 +57,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-target="#articlesModal">Détails</button>
+                                            <button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= ltrim(sortItem($rss, $i, 'img')); ?>" data-link="<?= ltrim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss,$i,'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss,$i,'description') ?>">Détails</button>
                                             <button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
                                         </div>
                                     </div>
@@ -105,15 +108,15 @@
                             <div class="col">
                                 <legend class="col-form-label col">Sujets</legend>
                                 <div>
-                                    <input type="checkbox" id="actuCheck" name="subCheck[]" value="<?= $urlActu ?>" checked="true">
+                                    <input type="checkbox" id="actuCheck" name="rssChoice[]" value="actu" checked="true">
                                     <label for="actuCheck">Actualités</label><br>
-                                    <input type="checkbox" id="secuCheck" name="subCheck[]" value="<?= $urlSecu ?>" checked="true">
+                                    <input type="checkbox" id="secuCheck" name="rssChoice[]" value="secu" checked="true">
                                     <label for="secuCheck"> Sécurité</label><br>
-                                    <input type="checkbox" id="appliCheck" name="subCheck[]" value="<?= $urlApps ?>" checked="true">
+                                    <input type="checkbox" id="appliCheck" name="rssChoice[]" value="apps" checked="true">
                                     <label for="appliCheck"> Applications</label><br>
-                                    <input type="checkbox" id="technoCheck" name="subCheck[]" value="<?= $urlTech ?>">
+                                    <input type="checkbox" id="technoCheck" name="rssChoice[]" value="tech">
                                     <label for="technoCheck">Technologie</label><br>
-                                    <input type="checkbox" id="buzzCheck" name="subCheck[]" value="<?= $urlBuzz ?>">
+                                    <input type="checkbox" id="buzzCheck" name="rssChoice[]" value="buzz">
                                     <label for="buzzCheck">Buzz</label><br>
                                 </div>
                             </div>
@@ -133,21 +136,21 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-warning">
-                    <div class="modal-title text-white h6" id="exampleModalLabel"><?= sortItem($rss, $i, 'pubDate') ?></div>
+                    <div class="modal-title text-white h6" id="exampleModalLabel"></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <form id="params" action="index.php" method="post">
                     <div class="modal-body mt-2">
-
-                        <div class="row text-center h5 mb-3 font-weith-bold"><?= sortItem($rss, $i, 'title') ?></div>
-                        <div class="row h6 m-1"><?= sortItem($rss, $i, 'description') ?></div>
+                        <p></p>
+                        <div class="row text-center h5 mb-3 font-weith-bold"><img class="img-fluid" src="" alt=""></div>
+                        <div class="row h6 m-1" id="desc"></div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
+                        <button class="btn btn-secondary btn-sm" type="button"><a href="" class="text-white" id="articleLink" target="_blank">lire l'article</a></button>
                     </div>
                 </form>
             </div>
@@ -159,5 +162,23 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="assets/js/testCheckBox.js"></script>
+<script>
+    $('#articlesModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget); // Button that triggered the modal
+  var articleTitle = button.data('title'); // Extract info from data-* attributes
+  var articleDesc = button.data('desc');
+  var artLink = button.data('link');
+  var artImg = button.data('img');
+  var artDate = button.data('date');
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this);
+  modal.find('.modal-title').text(articleTitle);
+  modal.find('.modal-body div img').attr('src', artImg);
+  modal.find('.modal-body #desc').text(articleDesc);
+  modal.find('.modal-body p').text(artDate);
+  modal.find('.modal-footer #articleLink').attr('href', artLink);
+})
+</script>
 
 </html>
