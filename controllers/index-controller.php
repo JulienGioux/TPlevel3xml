@@ -3,13 +3,12 @@
 if (isset($_COOKIE["test"])) {
     $testCookie = true;
 } else {
-    setcookie("test", "ok", time()+3600*24*365);
+    setcookie("test", "ok", time() + 3600 * 24 * 365);
 }
 
 if (isset($_COOKIE["test"])) {
     $testCookie = true;
-}
-else {
+} else {
     $testCookie = false;
 }
 
@@ -22,34 +21,49 @@ $urlApps = "https://www.01net.com/rss/actualites/applis-logiciels/";
 $urlTech = "https://www.01net.com/rss/actualites/technos/";
 $urlBuzz = "https://www.01net.com/rss/actualites/buzz-societe/";
 
+$error = [];
+// $regexSelectTheme = '/^[0-2]{1}/';
+// $regexSelectNbrArticles = '/^[3-7]{1}/';
 $cssPath = 'assets/css/';
 
 
 //Traite les données de formulaire, besoin de vérifs supplémentaires
 if (isset($_POST) && !empty($_POST)) {
+    if (!array_key_exists('colorTheme', $_POST)) {
+        $error['colorTheme'] = 'Merci de sélectionner un theme dans la liste';
+    }
     if (isset($_POST['colorTheme']) && !empty($_POST['colorTheme'])) {
-                $css = $cssPath . $_POST["colorTheme"] . 'Theme.css';
-                setcookie("colorTheme", $css, time()+31556926 ,'/');
+        // if (!preg_match($regexSelectTheme, $_POST['colorTheme'])) {
+        //     $error['colorTheme'] = 'Le choix du thème sélectionné n\'est pas listé';
+        // }
+        $css = $cssPath . $_POST["colorTheme"] . 'Theme.css';
+        setcookie("colorTheme", $css, time() + 31556926, '/');
+    }
+    if (!array_key_exists('articlesNumber', $_POST)) {
+        $error['articlesNumber'] = 'Le choix du nombre d\'articles sélectionné n\'est pas listé';
     }
     if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
-        if($_POST["articlesNumber"] == '3') {
+        // if (!preg_match($regexSelectNbrArticles, $_POST['articlesNumber'])) {
+        //     $error['articlesNumber'] = 'Merci de sélectionner un nombre d\'articles dans la iste';
+        // }
+        if ($_POST["articlesNumber"] == '3') {
             $articlesNumber = intval($_POST['articlesNumber']);
-            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+            setcookie("articlesNumber", $_POST["articlesNumber"], time() + 31556926, '/');
         } else if ($_POST["articlesNumber"] == '5') {
             $articlesNumber = intval($_POST['articlesNumber']);
-            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+            setcookie("articlesNumber", $_POST["articlesNumber"], time() + 31556926, '/');
         } else if ($_POST["articlesNumber"] == '8') {
             $articlesNumber = intval($_POST['articlesNumber']);
-            setcookie("articlesNumber", $_POST["articlesNumber"], time()+31556926 ,'/');
+            setcookie("articlesNumber", $_POST["articlesNumber"], time() + 31556926, '/');
         }
     }
     if (isset($_POST['subCheck']) && !empty($_POST['subCheck'])) {
         $rssChoice = [];
-        foreach ($_POST['subCheck'] as $key => $value) {            
+        foreach ($_POST['subCheck'] as $key => $value) {
             $rssChoice[$key] = $value;
         }
-        setcookie("rssChoice", json_encode($rssChoice), time()+31556926 ,'/');       
-     }
+        setcookie("rssChoice", json_encode($rssChoice), time() + 31556926, '/');
+    }
 }
 // if (isset($_POST) && !empty($_POST) && $testCookie) {
 //     header("Location: $_SERVER[PHP_SELF]");
@@ -66,18 +80,18 @@ if (isset($_COOKIE['rssChoice']) && empty($_POST)) {
 }
 
 //renvoie les infos d'un élément d'article article en fonction du flux, de son index
-function sortItem($rss,$i,$el) {
+function sortItem($rss, $i, $el)
+{
     $item = $rss->channel->item[$i];
 
-        if ($el == 'pubDate') {
-            $res = strftime('%c',strtotime($item->$el));
-        } elseif ($el == 'img'){
-            $res = $item->enclosure['url'];
-        } else {
-            $res = $item->$el;
-        }
+    if ($el == 'pubDate') {
+        $res = strftime('%c', strtotime($item->$el));
+    } elseif ($el == 'img') {
+        $res = $item->enclosure['url'];
+    } else {
+        $res = $item->$el;
+    }
     return $res;
-
 }
 
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.

@@ -12,24 +12,24 @@
 </head>
 
 <body>
-    <header class="d-flex align-items-center justify-content-center">
+    <header class="d-flex align-items-center justify-content-center bg-custom">
         <p class="h1">SUPER RSS READER</p>
         <div><img src="assets\img\rss-logo-icon-png-11302.png" alt="icon_fluxrss" class="iconFlux"></div>
     </header>
     <nav class="navbar navbar-expand-lg shadow">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"><img src="assets/img/bars-solid.svg" alt=""></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link navText" href="#">Sujet 1</a>
+                    <a class="nav-link colorWhiteCustom" href="#">Sujet 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navText" href="#">Sujet2</a>
+                    <a class="nav-link colorWhiteCustom" href="#">Sujet2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navText" href="#">Sujet 3</a>
+                    <a class="nav-link colorWhiteCustom" href="#">Sujet 3</a>
                 </li>
             </ul>
             <button type="button" class="btn buttonParamaters" data-toggle="modal" data-target="#parametersModal">
@@ -39,10 +39,12 @@
     </nav>
 
     <main class="container-fluid p-3">
-        <div class="row">
+    <span><?= (isset($error['colorTheme'])) ? $error['colorTheme'] : '' ?></span>
+    <span><?= (isset($error['articlesNumber'])) ? $error['articlesNumber'] : '' ?></span>
+        <div class="row justify-content-center">
             <?php
             foreach ($rssChoice as $key => $value) { ?>
-                <section class="col-sm my-3"><?= $rss = simplexml_load_file($value) ?>
+                <section class="col-xl col-lg-10 col-md-10 col-sm my-3"><?= $rss = simplexml_load_file($value) ?>
                     <?php
                     for ($i = 0; $i < $articlesNumber; $i++) { ?>
                         <div class="media bg-light p-3 border border-bottom shadow">
@@ -54,8 +56,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-target="#articlesModal">Détails</button>
-                                            <button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
+                                            <button class="btn buttonArticle btn-sm" type="button" data-toggle="modal" data-target="#articlesModal">Détails</button>
+                                            <a href="<?= sortItem($rss, $i, 'link') ?>" class="btn buttonArticle btn-sm" target="_blank">lire l'article</a>
                                         </div>
                                     </div>
                                 </div>
@@ -76,9 +78,9 @@
     <div class="modal fade" id="parametersModal" tabindex="-1" role="dialog" aria-labelledby="parametersModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Paramètres</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header bg-custom">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">Paramètres</h5>
+                    <button type="button" class="close colorWhiteCustom" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -86,7 +88,7 @@
                     <div class="modal-body">
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-lg-4 col-sm-12">
                                 <label for="themeColor">Thème</label>
                                 <select class="form-control" id="colorTheme" name="colorTheme">
                                     <option value="black">Noir</option>
@@ -94,7 +96,7 @@
                                     <option value="red">Rouge</option>
                                 </select>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-4 col-sm-12">
                                 <label for="articlesNumber">Nombre d'articles</label>
                                 <select class="form-control" id="articlesNumber" name="articlesNumber">
                                     <option value="3">3</option>
@@ -102,7 +104,7 @@
                                     <option value="8">8</option>
                                 </select>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-4 col-sm-12">
                                 <legend class="col-form-label col">Sujets</legend>
                                 <div>
                                     <input type="checkbox" id="actuCheck" name="subCheck[]" value="<?= $urlActu ?>" checked="true">
@@ -120,8 +122,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button type="submit" class="btn btn-warning" name="submit">Sauvegarder</button>
+                        <button type="reset" class="btn buttonModalParamaters" data-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn buttonModalParamaters" name="submit">Sauvegarder</button>
                     </div>
                 </form>
             </div>
@@ -132,9 +134,9 @@
     <div class="modal fade" id="articlesModal" tabindex="-1" role="dialog" aria-labelledby="articlesModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-warning">
+                <div class="modal-header bg-custom">
                     <div class="modal-title text-white h6" id="exampleModalLabel"><?= sortItem($rss, $i, 'pubDate') ?></div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close colorWhiteCustom" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -146,8 +148,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
+                        <button type="reset" class="btn buttonModalArticle" data-dismiss="modal">Fermer</button>
+                        <a href="<?= sortItem($rss, $i, 'link') ?>" class="btn buttonModalArticle" target="_blank">lire l'article</a>
                     </div>
                 </form>
             </div>
