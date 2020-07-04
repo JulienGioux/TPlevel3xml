@@ -24,7 +24,7 @@
             <ul class="navbar-nav mr-auto">
                 <?php foreach ($rssChoice as $key => $value) {?>
                 <li class="nav-item active">
-                    <a class="nav-link navText" href="#"><?= $value ?></a>
+                    <a class="nav-link navText" href="index.php?cat=<?= $value ?>"><?= $value ?></a>
                 </li>
                 <?php } ?>
             </ul>
@@ -36,34 +36,16 @@
     <main class="container-fluid p-3">
         <div class="row">
             <?php
-                foreach ($rssChoice as $key => $cat) {
+                if (empty($_GET['cat'])) {
+                    foreach ($rssChoice as $key => $cat) {
+                        $rss = simplexml_load_file($cache_files[$cat]);
+                        require('pages/page-template.php');
+                    } 
+                } else {
                     $rss = simplexml_load_file($cache_files[$cat]);
-                
+                    require('pages/page-template.php');
+                }
             ?>
-                <section class="col-sm my-3">
-                    <?php
-                    for ($i = 0; $i < $articlesNumber; $i++) {
-                    ?>
-                        <div class="media bg-light p-3 border border-bottom shadow">
-                            <div class="media">
-                                <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mr-3" alt="...">
-                                <div class="media-body mb-3">
-                                    <div class="row">
-                                        <div class="col h6 mb-4"><?= sortItem($rss, $i, 'title') ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= ltrim(sortItem($rss, $i, 'img')); ?>" data-link="<?= ltrim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss,$i,'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss,$i,'description') ?>">Détails</button>
-                                            <button class="btn btn-secondary btn-sm" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </section>
-
-            <?php } ?>
         </div>
     </main>
 
@@ -158,23 +140,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="assets/js/testCheckBox.js"></script>
-<script>
-    $('#articlesModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget); // Button that triggered the modal
-  var articleTitle = button.data('title'); // Extract info from data-* attributes
-  var articleDesc = button.data('desc');
-  var artLink = button.data('link');
-  var artImg = button.data('img');
-  var artDate = button.data('date');
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this);
-  modal.find('.modal-title').text(articleTitle);
-  modal.find('.modal-body div img').attr('src', artImg);
-  modal.find('.modal-body #desc').text(articleDesc);
-  modal.find('.modal-body p').text(artDate);
-  modal.find('.modal-footer #articleLink').attr('href', artLink);
-})
-</script>
+<script src="assets/js/level3xml.js"></script>
 
 </html>

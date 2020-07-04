@@ -125,6 +125,16 @@ function isSelected($val, $userVal) {
     }
 }
 
+if (isset($_GET['cat']) && !empty($_GET['cat'])) {
+    if (in_array($_GET['cat'], $rssChoice, true)) {
+        $cat = $_GET['cat'];
+    } else {
+        $_GET['cat'] = null;
+    }
+    
+}
+
+
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
 // foreach ($rssChoice as $key => $cat) {
 //     $rss = simplexml_load_file($cache_files[$cat]);
