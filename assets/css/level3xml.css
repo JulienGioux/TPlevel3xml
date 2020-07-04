@@ -12,6 +12,7 @@ header {
 
 .imgMedia {
     width: 100px;
+    display: inline-flex;
 }
 
 .media-body img {
@@ -21,4 +22,8 @@ display: none;
 .iconSearch {
     height: auto;
     width: 30px;
+}
+
+.badge {
+    display: inline;
 }

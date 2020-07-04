@@ -4,11 +4,11 @@
             if (empty($_GET['cat'])) {
                 foreach ($rssChoice as $key => $cat) {
                     $rss = simplexml_load_file($cache_files[$cat]);
-                    require('pages/page-template.php');
+                    require('pages/page.php');
                 } 
             } else {
                 $rss = simplexml_load_file($cache_files[$cat]);
-                require('pages/page-template.php');
+                require('pages/page.php');
             }
         ?>
     </div>
