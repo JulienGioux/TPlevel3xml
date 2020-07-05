@@ -3,7 +3,7 @@
 if (!isset($_GET['cat'])) {
     switch (count($rssChoice)) {
         case 1:
-            $classSecCat = 'col';
+            $classSecCat = 'col-md-8';
             break;
         case 2:
             $classSecCat = 'col-md-6';
@@ -12,11 +12,11 @@ if (!isset($_GET['cat'])) {
             $classSecCat = 'col-lg-4 col-md-6';
             break;
         default:
-            $classSecCat = 'col';
+            $classSecCat = 'col-md-8';
             break;
     }    
 } else {
-    $classSecCat = 'col';
+    $classSecCat = 'col-md-8';
 }
 //défini couleur badge catégorie
 switch ($cat) {
@@ -48,8 +48,8 @@ switch ($cat) {
     <?php
     for ($i = 0; $i < $articlesNumber; $i++) {
     ?>
-        <div class="media bg-light p-3 border border-bottom shadow">
-            <div class="media m-auto">
+        <div class="media-body justify-content-center bg-light p-1 border border-bottom shadow">
+            <div class="media">
                 <div>
                 <a href="?cat=<?= $cat ?>"><div class="badge badge-<?= $classBadgeCat ?>"><?= $cat ?></div></a>
                 

@@ -8,14 +8,46 @@
         <description>01NET.COM</description>
         <language>fr</language>
         <copyright>Copyright 01NET</copyright>
-        <pubDate>Sun, 05 Jul 2020 10:36:18 +0200</pubDate>
-        <lastBuildDate>Sun, 05 Jul 2020 10:36:18 +0200</lastBuildDate>
+        <pubDate>Sun, 05 Jul 2020 12:36:17 +0200</pubDate>
+        <lastBuildDate>Sun, 05 Jul 2020 12:36:17 +0200</lastBuildDate>
         <ttl>15</ttl>
         <image>
             <title>Flux toutes les actualités - 01net</title>
             <url>https://static.bfmtv.com/ressources/img/logo/logo-01net-gris.png</url>
             <link>https://www.01net.com/info/flux-rss/flux-toutes-les-actualites/</link>
         </image>    <item>
+    <title><![CDATA[Apple : les dix Mac qui ont marqué les quinze ans de l’ère Intel]]></title>
+            <description><![CDATA[Annoncés en 2005, mais commercialisés à partir de janvier 2006, les Mac Intel ont profondément marqué ces quinze dernières années. Alors qu’Apple les passera bientôt sous ses puces Apple Silicon, nous revenons sur les modèles les plus emblématiques.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/444/bfcd872f60aab0e27b0da02212395.jpg"/>]]></description>
+        <link>
+            https://www.01net.com/actualites/apple-les-dix-mac-qui-ont-marque-les-quinze-ans-de-l-ere-intel-1942873.html
+        </link>
+    <pubDate>Sun, 05 Jul 2020 11:59:00 +0200</pubDate>
+    <guid isPermaLink="false">
+                    https://www.01net.com/actualites/apple-les-dix-mac-qui-ont-marque-les-quinze-ans-de-l-ere-intel-1942873.html
+            </guid>
+                <enclosure url="https://img.bfmtv.com/i/0/0/444/bfcd872f60aab0e27b0da02212395.jpg"
+               type="image/jpg"
+               length="0"
+    />
+
+    </item>
+    <item>
+    <title><![CDATA[Le saviez-vous ? Steve Jobs considérait les produits Apple comme des œuvres d’art]]></title>
+            <description><![CDATA[Chaque mois, Jérôme Colombain vous raconte une histoire de tech dans « Le Saviez-Vous ? » sur 01TV.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/19d/ca9c1b0392ed7fd63fbd62a7ad968.jpg"/>]]></description>
+        <link>
+            https://www.01net.com/actualites/le-saviez-vous-steve-jobs-considerait-les-produits-apple-comme-des-oeuvres-d-art-1943489.html
+        </link>
+    <pubDate>Sun, 05 Jul 2020 11:44:54 +0200</pubDate>
+    <guid isPermaLink="false">
+                    https://www.01net.com/actualites/le-saviez-vous-steve-jobs-considerait-les-produits-apple-comme-des-oeuvres-d-art-1943489.html
+            </guid>
+                <enclosure url="https://img.bfmtv.com/i/0/0/19d/ca9c1b0392ed7fd63fbd62a7ad968.jpg"
+               type="image/jpg"
+               length="0"
+    />
+
+    </item>
+    <item>
     <title><![CDATA[Créez facilement votre propre box TV grâce au Raspberry Pi]]></title>
             <description><![CDATA[Exit le boîtier TV de l’opérateur. On peut très bien regarder la télé au travers d’un Raspberry Pi et en plus... c’est gratuit !  Voici les étapes pour y arriver.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/c75/de21f7a798763239a115ac9d21b49.jpg"/>]]></description>
         <link>
@@ -938,38 +970,6 @@
                     https://www.01net.com/actualites/les-jeux-dematerialises-de-nintendo-ne-seront-plus-vendus-ailleurs-que-sur-l-eshop-en-europe-1941571.html
             </guid>
                 <enclosure url="https://img.bfmtv.com/i/0/0/987/9ae69413d96575dcf4877bcf90785.jpeg"
-               type="image/jpg"
-               length="0"
-    />
-
-    </item>
-    <item>
-    <title><![CDATA[Bon plan Boulanger : économisez 50 euros sur la trottinette électrique Xiaomi M365]]></title>
-            <description><![CDATA[Boulanger propose la trottinette électrique M365 à 349 euros au lieu de 399 euros.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/fa02d2/d912ff56fed9ea08667a9dc7b1.jpg"/>]]></description>
-        <link>
-            https://www.01net.com/actualites/bon-plan-boulanger-economisez-50-euros-sur-la-trottinette-electrique-xiaomi-m365-1941774.html
-        </link>
-    <pubDate>Wed, 01 Jul 2020 03:09:13 +0200</pubDate>
-    <guid isPermaLink="false">
-                    https://www.01net.com/actualites/bon-plan-boulanger-economisez-50-euros-sur-la-trottinette-electrique-xiaomi-m365-1941774.html
-            </guid>
-                <enclosure url="https://img.bfmtv.com/i/0/0/fa02d2/d912ff56fed9ea08667a9dc7b1.jpg"
-               type="image/jpg"
-               length="0"
-    />
-
-    </item>
-    <item>
-    <title><![CDATA[Snapdragon Wear 4100+ : ce processeur pour smartwatch suffira-t-il à sauver le soldat Wear OS ?]]></title>
-            <description><![CDATA[Plus moderne et plus puissant que la vieillissante plate-forme Wear 3100, le Snapdragon Wear 4100+ cible les périphériques fonctionnant sous Wear OS. Un OS en quasi mort clinique qui force à se demander sur les efforts de Qualcomm seront suffisants pour le ressusciter.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/35c/ec044c2db59a0f8144e7c543c4f0f.jpg"/>]]></description>
-        <link>
-            https://www.01net.com/actualites/snapdragon-wear-4100-ce-processeur-pour-smartwatch-suffira-t-il-a-sauver-le-soldat-wear-os-1941585.html
-        </link>
-    <pubDate>Wed, 01 Jul 2020 02:53:49 +0200</pubDate>
-    <guid isPermaLink="false">
-                    https://www.01net.com/actualites/snapdragon-wear-4100-ce-processeur-pour-smartwatch-suffira-t-il-a-sauver-le-soldat-wear-os-1941585.html
-            </guid>
-                <enclosure url="https://img.bfmtv.com/i/0/0/35c/ec044c2db59a0f8144e7c543c4f0f.jpg"
                type="image/jpg"
                length="0"
     />
