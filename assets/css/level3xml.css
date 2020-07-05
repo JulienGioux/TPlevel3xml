@@ -2,7 +2,9 @@ header {
     height: 20vh;
     width: auto;
 }
-
+header a:hover {
+    text-decoration: none;
+}
 .iconFlux {
     height: 30px;
     width: 30px;
@@ -12,6 +14,7 @@ header {
 
 .imgMedia {
     width: 100px;
+    display: inline-flex;
 }
 
 .media-body img {
@@ -21,4 +24,8 @@ display: none;
 .iconSearch {
     height: auto;
     width: 30px;
+}
+
+.badge {
+    display: inline;
 }

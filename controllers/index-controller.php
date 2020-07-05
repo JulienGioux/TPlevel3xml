@@ -14,7 +14,7 @@ $cssPath = 'assets/css/';
 
 // mise en cache des fichiers xml
 $exire = time() - 1800; //30 min
-$upload_dir = 'tmp/'; // dossier ou mettre en cache les fichiers xml
+$upload_dir = 'rssCache/'; // dossier ou mettre en cache les fichiers xml
 
 // CACHE !!!
 foreach ($urlRss as $cat => $url) {
@@ -54,8 +54,8 @@ if (isset($_POST['colorTheme']) && !empty($_POST['colorTheme'])) {
     setcookie("colorTheme", $_POST["colorTheme"], time()+31556926 ,'/');
 }
 // récupère le choix du theme en priorité $_POST, ensuite $_cookie, sinon valeur par défaut
-$cssTheme = $_POST["colorTheme"] ?? $cssThemeCookie ?? 'black';
-$cssTheme = $cssPath . $cssTheme . 'Theme.css'; // pointe vers le fichier css correspondant
+$Theme = $_POST["colorTheme"] ?? $cssThemeCookie ?? 'black';
+$cssTheme = $cssPath . $Theme . 'Theme.css'; // pointe vers le fichier css correspondant
  
 
 //NUMBRE D'ARTICLE AFFICHÉ
@@ -112,6 +112,28 @@ function sortItem($rss,$i,$el) {
         }
     return $res;
 }
+
+function isChecked($val, $rssChoice) {
+    if (in_array($val, $rssChoice, true)) {
+        return 'checked="true"';
+    }
+}
+
+function isSelected($val, $userVal) {
+    if ($val === $userVal) {
+        return 'selected';
+    }
+}
+
+if (isset($_GET['cat']) && !empty($_GET['cat'])) {
+    if (in_array($_GET['cat'], $rssChoice, true)) {
+        $cat = $_GET['cat'];
+    } else {
+        $_GET['cat'] = null;
+    }
+    
+}
+
 
 //Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
 // foreach ($rssChoice as $key => $cat) {
