@@ -1,4 +1,4 @@
-<header class="d-flex align-items-center justify-content-center">
+<header class="d-flex align-items-center justify-content-center bg-custom">
     <a href="index.php">
         <p class="h1">SUPER RSS READER</p>
     </a>

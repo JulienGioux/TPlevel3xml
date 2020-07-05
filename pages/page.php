@@ -14,7 +14,7 @@ if (!isset($_GET['cat'])) {
         default:
             $classSecCat = 'col-md-8';
             break;
-    }    
+    }
 } else {
     $classSecCat = 'col-md-8';
 }
@@ -34,14 +34,11 @@ switch ($cat) {
         break;
     case 'secu':
         $classBadgeCat = 'danger';
-        break;    
+        break;
     default:
         $classBadgeCat = 'muted';
         break;
 }
-
-
-
 ?>
 
 <section class="<?= $classSecCat ?> my-3">
@@ -51,8 +48,9 @@ switch ($cat) {
         <div class="media-body justify-content-center bg-light p-1 border border-bottom shadow">
             <div class="media">
                 <div>
-                <a href="?cat=<?= $cat ?>"><div class="badge badge-<?= $classBadgeCat ?>"><?= $cat ?></div></a>
-                
+                    <a href="?cat=<?= $cat ?>">
+                        <div class="badge badge-<?= $classBadgeCat ?>"><?= $cat ?></div>
+                    </a>
                     <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mt-3 rounded d-block" alt="...">
                 </div>
                 <div class="media-body p-2">
@@ -61,8 +59,8 @@ switch ($cat) {
                     </div>
                     <div class="row">
                         <div class="col text-right">
-                            <button class="btn btn-secondary btn-sm m-1" type="button" data-toggle="modal" data-cat="<?= $cat ?>" data-catColor="<?= $classBadgeCat ?>" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= ltrim(sortItem($rss, $i, 'img')); ?>" data-link="<?= ltrim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss,$i,'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss,$i,'description') ?>">Détails</button>
-                            <button class="btn btn-secondary btn-sm m-1" type="button"><a href="<?= sortItem($rss, $i, 'link') ?>" class="text-white" target="_blank">lire l'article</a></button>
+                            <button class="btn buttonArticle btn-sm m-1" type="button" data-toggle="modal" data-cat="<?= $cat ?>" data-catColor="<?= $classBadgeCat ?>" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= ltrim(sortItem($rss, $i, 'img')); ?>" data-link="<?= ltrim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss, $i, 'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss, $i, 'description') ?>">Détails</button>
+                            <a href="<?= sortItem($rss, $i, 'link') ?>" class="btn buttonArticle btn-sm m-1" target="_blank">Lire l'article</a>
                         </div>
                     </div>
                 </div>

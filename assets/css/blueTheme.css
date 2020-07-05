@@ -2,23 +2,62 @@ body {
     background-color: #cfdee7;
 }
 
-header {
-    background-color: #07a0c3;
-}
-
 .h1 {
     color: #ffffff;
 }
 
 nav {
+    background-color: #07a0c3;
+}
+
+.bg-custom {
     background-color: #086788;
 }
 
-.navText {
+.colorWhiteCustom {
     color: #ffffff;
 }
 
 .buttonParamaters {
+    background-color: #086788;
+    color: #ffffff;
+}
+
+.buttonParamaters:hover {
     background-color: #ffffff;
     color: #086788;
+    border: 1px solid #086788;
+}
+
+.buttonModalParamaters {
+    background-color: #086788;
+    color: #ffffff;
+}
+
+.buttonModalParamaters:hover {
+    background-color: #ffffff;
+    color: #086788;
+    border: 1px solid black;
+}
+
+.buttonArticle {
+    background-color: #086788;
+    color: #ffffff;
+}
+
+.buttonArticle:hover {
+    background-color: #ffffff;
+    color: #086788;
+    border: 1px solid black;
+}
+
+.buttonModalArticle {
+    background-color: #086788;
+    color: #ffffff;
+}
+
+.buttonModalArticle:hover {
+    background-color: #ffffff;
+    color: #086788;
+    border: 1px solid black;
 }

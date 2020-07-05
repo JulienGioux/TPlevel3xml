@@ -2,10 +2,6 @@ body {
     background-color: #cfdee7;
 }
 
-header {
-    background-color: #ba0000;
-}
-
 .h1 {
     color: #fdffff;
 }
@@ -14,11 +10,54 @@ nav {
     background-color: #353535;
 }
 
-.navText {
+.bg-custom {
+    background-color: #ba0000;
+}
+
+.colorWhiteCustom {
     color: #ffffff;
 }
 
 .buttonParamaters {
+    background-color: #ba0000;
+    color: #ffffff;
+}
+
+.buttonParamaters:hover {
     background-color: #ffffff;
-    color: #353535;
+    color: #ba0000;
+    border: 1px solid #ba0000;
+}
+
+.buttonModalParamaters {
+    background-color: #ba0000;
+    color: #ffffff;
+}
+
+.buttonModalParamaters:hover {
+    background-color: #ffffff;
+    color: #ba0000;
+    border: 1px solid black;
+}
+
+.buttonArticle {
+    background-color: #ba0000;
+    color: #ffffff;
+}
+
+.buttonArticle:hover {
+    background-color: #ffffff;
+    color: #ba0000;
+    border: 1px solid black;
+}
+
+.buttonModalArticle {
+    background-color: #ba0000;
+    color: #ffffff;
+}
+
+.buttonModalArticle:hover {
+    background-color: #ffffff;
+    color: #ba0000;
+    border: 1px solid black;
 }
