@@ -45,7 +45,7 @@ switch ($cat) {
     <?php
     for ($i = 0; $i < $articlesNumber; $i++) {
     ?>
-        <div class="media-body justify-content-center bg-light p-1 border border-bottom shadow">
+        <div class="media-body justify-content-center bg-light p-1 border border-bottom shadow animate__animated animate__bounceInUp">
             <div class="media">
                 <div>
                     <a href="?cat=<?= $cat ?>">
