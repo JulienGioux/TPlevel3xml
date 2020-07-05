@@ -3,7 +3,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-custom">
-                    <h5 class="modal-title" id="exampleModalLabel">Paramètres</h5>
+                    <h5 class="modal-title text-light" id="exampleModalLabel">Paramètres</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
