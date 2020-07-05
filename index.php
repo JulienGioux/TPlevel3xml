@@ -1,7 +1,9 @@
+<?php require_once "controllers/index-controller.php"; ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php require_once "controllers/index-controller.php"; ?>
+
 <?php require "pages/head.php"; ?>
 <body>
 <?php require "pages/header.php"; ?>

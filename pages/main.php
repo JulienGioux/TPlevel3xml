@@ -1,4 +1,4 @@
-<main class="container-fluid p-3">
+<main class="container p-3">
     <div class="row">
         <?php
             if (empty($_GET['cat'])) {
