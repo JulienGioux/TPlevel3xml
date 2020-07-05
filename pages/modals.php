@@ -71,7 +71,7 @@
                     </div>
                     <div id="articleModalFooter" class="modal-footer">
                         <button type="reset" class="btn buttonModalArticle btn-sm" data-dismiss="modal">Fermer</button>
-                        <a href="" class="btn buttonModalArticle btn-sm" id="articleLink" target="Article !">Lire l'article</a>
+                        <a href="" class="btn buttonModalArticle btn-sm" id="articleLink" target="Article">Lire l'article</a>
                     </div>
                 </form>
             </div>
