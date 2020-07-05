@@ -41,7 +41,7 @@ switch ($cat) {
 }
 ?>
 
-<section class="<?= $classSecCat ?> my-3">
+<section class="<?= $classSecCat ?> my-2">
     <?php
     for ($i = 0; $i < $articlesNumber; $i++) {
     ?>
@@ -49,16 +49,16 @@ switch ($cat) {
             <div class="media">
                 <div>
                     <a href="?cat=<?= $cat ?>">
-                        <div class="badge badge-<?= $classBadgeCat ?>"><?= $cat ?></div>
+                        <div class="mb-1 badge badge-<?= $classBadgeCat ?>"><?= $cat ?></div>
                     </a>
-                    <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mt-3 rounded d-block" alt="...">
+                    <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mt-2 rounded d-block" alt="...">
                 </div>
-                <div class="media-body p-2">
-                    <div class="row">
-                        <div class="col h6"><?= sortItem($rss, $i, 'title') ?></div>
+                <div class="media-body d-flex flex-column align-items-start m-0 p-2" style="min-height: 140px">
+                    <div class="m-0">
+                        <div class="h6"><?= sortItem($rss, $i, 'title') ?></div>
                     </div>
-                    <div class="row">
-                        <div class="col text-right">
+                    <div class="mt-auto align-self-end">
+                        <div class="justify-self-end">
                             <button class="btn buttonArticle btn-sm m-1" type="button" data-toggle="modal" data-cat="<?= $cat ?>" data-catColor="<?= $classBadgeCat ?>" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= trim(sortItem($rss, $i, 'img')); ?>" data-link="<?= trim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss, $i, 'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss, $i, 'description') ?>">Détails</button>
                             <button type="button" onclick="window.open('<?= trim(sortItem($rss, $i, 'link'));?>', 'Article');" class="btn buttonArticle btn-sm m-1">Lire l'article</button>
                         </div>
