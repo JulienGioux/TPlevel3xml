@@ -59,8 +59,8 @@ switch ($cat) {
                     </div>
                     <div class="row">
                         <div class="col text-right">
-                            <button class="btn buttonArticle btn-sm m-1" type="button" data-toggle="modal" data-cat="<?= $cat ?>" data-catColor="<?= $classBadgeCat ?>" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= ltrim(sortItem($rss, $i, 'img')); ?>" data-link="<?= ltrim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss, $i, 'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss, $i, 'description') ?>">Détails</button>
-                            <a href="<?= sortItem($rss, $i, 'link') ?>" class="btn buttonArticle btn-sm m-1" target="_blank">Lire l'article</a>
+                            <button class="btn buttonArticle btn-sm m-1" type="button" data-toggle="modal" data-cat="<?= $cat ?>" data-catColor="<?= $classBadgeCat ?>" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= trim(sortItem($rss, $i, 'img')); ?>" data-link="<?= trim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss, $i, 'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss, $i, 'description') ?>">Détails</button>
+                            <button type="button" onclick="window.open('<?= trim(sortItem($rss, $i, 'link'));?>', 'Article');" class="btn buttonArticle btn-sm m-1">Lire l'article</button>
                         </div>
                     </div>
                 </div>
