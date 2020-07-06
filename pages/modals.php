@@ -8,7 +8,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="params" action="index.php" method="post">
+                <form id="params" action="/" method="post">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-4 col-sm-12">

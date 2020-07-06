@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteRule ^()$ /index.php
+Rewritecond %{HTTP_HOST} /index.php
 RewriteRule ^(actu)$ /index.php?cat=$1
 RewriteRule ^(buzz)$ /index.php?cat=$1
 RewriteRule ^(tech)$ /index.php?cat=$1
