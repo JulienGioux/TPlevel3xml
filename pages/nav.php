@@ -6,7 +6,7 @@
         <ul class="navbar-nav mr-auto">
             <?php foreach ($rssChoice as $key => $value) {?>
             <li class="nav-item active">
-                <a class="nav-link navText rounded-pill" href="<?= $value ?>"><?= $value ?></a>
+                <a class="nav-link navText rounded-pill text-center" href="<?= $value ?>"><?= $value ?></a>
             </li>
             <?php } ?>
         </ul>

@@ -130,6 +130,5 @@ if (isset($_GET['cat']) && !empty($_GET['cat'])) {
         $cat = $_GET['cat'];
     } else {
         $_GET['cat'] = null;
-    }
-    
+    }   
 }
