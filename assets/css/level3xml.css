@@ -1,17 +1,15 @@
 header {
-    height: 20vh;
+    height: 100%;
     width: auto;
 }
-header div img {
-    filter: invert();
-}
+
 header a:hover {
     text-decoration: none;
 }
 .iconFlux {
-    height: 30px;
-    width: 30px;
-    margin-left : 1rem;
+    height: auto;
+    width: 25vw;
+    margin: 20px;
 }
 .nav-link:hover {
     background-color: aliceblue;

@@ -8,14 +8,30 @@
         <description>01NET.COM</description>
         <language>fr</language>
         <copyright>Copyright 01NET</copyright>
-        <pubDate>Mon, 06 Jul 2020 11:24:19 +0200</pubDate>
-        <lastBuildDate>Mon, 06 Jul 2020 11:24:19 +0200</lastBuildDate>
+        <pubDate>Mon, 06 Jul 2020 11:30:38 +0200</pubDate>
+        <lastBuildDate>Mon, 06 Jul 2020 11:30:38 +0200</lastBuildDate>
         <ttl>15</ttl>
         <image>
             <title>Flux toutes les actualités - 01net</title>
             <url>https://static.bfmtv.com/ressources/img/logo/logo-01net-gris.png</url>
             <link>https://www.01net.com/info/flux-rss/flux-toutes-les-actualites/</link>
         </image>    <item>
+    <title><![CDATA[Pixii : l’appareil photo made in France est enfin commercialisé]]></title>
+            <description><![CDATA[Entièrement conçu et fabriqué à Besançon, le Pixii est l’appareil photo à visée télémétrique le moins cher du marché. Et se veut le chantre d’un retour à la photo « à l’ancienne ». Avec un capteur numérique.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/95e/eb5864f96bf36831ac3d39018582c.jpg"/>]]></description>
+        <link>
+            https://www.01net.com/actualites/pixii-l-appareil-photo-made-in-france-est-enfin-commercialise-1943717.html
+        </link>
+    <pubDate>Mon, 06 Jul 2020 11:27:53 +0200</pubDate>
+    <guid isPermaLink="false">
+                    https://www.01net.com/actualites/pixii-l-appareil-photo-made-in-france-est-enfin-commercialise-1943717.html
+            </guid>
+                <enclosure url="https://img.bfmtv.com/i/0/0/95e/eb5864f96bf36831ac3d39018582c.jpg"
+               type="image/jpg"
+               length="0"
+    />
+
+    </item>
+    <item>
     <title><![CDATA[Bon plan : le forfait Auchan Télécom 100 Go coûte moins de 10 euros par mois pendant un an]]></title>
             <description><![CDATA[Auchan Télécom propose son forfait mobile 100 Go à 9,99 euros par mois au lieu de 19,99 euros par mois.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/8df/94041d0642b3347477759d605c61e.jpg"/>]]></description>
         <link>
@@ -954,22 +970,6 @@
                     https://www.01net.com/actualites/les-meilleurs-forfaits-de-la-semaine-des-offres-a-moins-de-10-euros-par-mois-1941880.html
             </guid>
                 <enclosure url="https://img.bfmtv.com/i/0/0/364/7746b19c2a881174027f2115922c7.jpg"
-               type="image/jpg"
-               length="0"
-    />
-
-    </item>
-    <item>
-    <title><![CDATA[« On ne pourra jamais démontrer qu’il n’y a pas de risque avec la 5G »]]></title>
-            <description><![CDATA[L’Agence sanitaire prévient que ses conclusions attendues au premier trimestre 2021 sur les effets sanitaires de la 5G ne seront pas tranchées. Une incertitude qui vaut pour n’importe quelle technologie.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/c30d2c/d2843961fe1bcf2e4523c668f4.jpeg"/>]]></description>
-        <link>
-            https://www.01net.com/actualites/on-ne-pourra-jamais-demontrer-qu-il-n-y-a-pas-de-risque-avec-la-5g-1941841.html
-        </link>
-    <pubDate>Wed, 01 Jul 2020 04:50:41 +0200</pubDate>
-    <guid isPermaLink="false">
-                    https://www.01net.com/actualites/on-ne-pourra-jamais-demontrer-qu-il-n-y-a-pas-de-risque-avec-la-5g-1941841.html
-            </guid>
-                <enclosure url="https://img.bfmtv.com/i/0/0/c30d2c/d2843961fe1bcf2e4523c668f4.jpeg"
                type="image/jpg"
                length="0"
     />
