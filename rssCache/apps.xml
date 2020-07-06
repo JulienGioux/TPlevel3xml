@@ -8,14 +8,30 @@
         <description>Toute l'actualité des derniers logiciels sur 01net : Internet Explorer, Firefox, Google Chrome Des infos complètes sur les logiciels les plus utilisés pour Internet, les photos, vidéos et jeux.</description>
         <language>fr</language>
         <copyright>Copyright 01NET</copyright>
-        <pubDate>Fri, 03 Jul 2020 06:32:02 +0200</pubDate>
-        <lastBuildDate>Fri, 03 Jul 2020 06:32:02 +0200</lastBuildDate>
+        <pubDate>Mon, 06 Jul 2020 11:09:02 +0200</pubDate>
+        <lastBuildDate>Mon, 06 Jul 2020 11:09:02 +0200</lastBuildDate>
         <ttl>15</ttl>
         <image>
             <title>Applis, Logiciels - 01net</title>
             <url>https://static.bfmtv.com/ressources/img/logo/logo-01net-gris.png</url>
             <link>https://www.01net.com/actualites/applis-logiciels/</link>
         </image>    <item>
+    <title><![CDATA[Chrome 86 pourrait vous faire gagner deux heures d’autonomie sur votre PC portable]]></title>
+            <description><![CDATA[En ne mettant à jour les pages ouvertes dans des onglets beaucoup plus rarement qu’auparavant, la prochaine version de Chrome s’alignera sur les performances des navigateurs d’Apple et Microsoft dans ce domaine.  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/4a2/e88320d17537dbb0941789d1448a1.jpeg"/>]]></description>
+        <link>
+            https://www.01net.com/actualites/chrome-86-pourrait-vous-faire-gagner-deux-heures-d-autonomie-sur-votre-pc-portable-1943698.html
+        </link>
+    <pubDate>Mon, 06 Jul 2020 10:33:47 +0200</pubDate>
+    <guid isPermaLink="false">
+                    https://www.01net.com/actualites/chrome-86-pourrait-vous-faire-gagner-deux-heures-d-autonomie-sur-votre-pc-portable-1943698.html
+            </guid>
+                <enclosure url="https://img.bfmtv.com/i/0/0/4a2/e88320d17537dbb0941789d1448a1.jpeg"
+               type="image/jpg"
+               length="0"
+    />
+
+    </item>
+    <item>
     <title><![CDATA[Facebook met Lasso, son « TikTok killer », au placard]]></title>
             <description><![CDATA[Le groupe de Mark Zuckerberg arrête l'expérience Lasso, une appli de partage de courtes vidéos copiée sur TikTok. L'aveu d'un échec ?  <br/><br/> <img src="https://img.bfmtv.com/c/150/100/33a/f070ef6ba606ab1c1a5d4e4c1d25f.jpg"/>]]></description>
         <link>
@@ -634,22 +650,6 @@
                     https://www.01net.com/actualites/microsoft-vaautomatiquement-installer-edge-son-navigateur-web-sur-vos-pc-sous-windows-7-et-8-1-1937031.html
             </guid>
                 <enclosure url="https://img.bfmtv.com/i/0/0/d0125/21b12830ae16cb579770eb037d6.jpg"
-               type="image/jpg"
-               length="0"
-    />
-
-    </item>
-    <item>
-    <title><![CDATA[Nearby Share : Android pourra échanger des fichiers avec n'importe quel PC équipé de Chrome]]></title>
-            <description><![CDATA[Le système ne serait pas compatible avec les seuls smartphones Android. Il s'étendrait aussi aux Chromebook et au navigateur Chrome.   <br/><br/> <img src="https://img.bfmtv.com/c/150/100/153/cd9a8bb4553af21a33ee9143779cc.jpeg"/>]]></description>
-        <link>
-            https://www.01net.com/actualites/nearby-share-android-pourra-echanger-des-fichiers-avec-n-importe-quel-pc-equipe-de-chrome-1937030.html
-        </link>
-    <pubDate>Mon, 22 Jun 2020 11:01:42 +0200</pubDate>
-    <guid isPermaLink="false">
-                    https://www.01net.com/actualites/nearby-share-android-pourra-echanger-des-fichiers-avec-n-importe-quel-pc-equipe-de-chrome-1937030.html
-            </guid>
-                <enclosure url="https://img.bfmtv.com/i/0/0/153/cd9a8bb4553af21a33ee9143779cc.jpeg"
                type="image/jpg"
                length="0"
     />
