@@ -4,10 +4,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-            <?php foreach ($rssChoice as $key => $value) { ?>
-                <li class="nav-item active">
-                    <a class="nav-link colorWhiteCustom" href="index.php?cat=<?= $value ?>"><?= $value ?></a>
-                </li>
+            <?php foreach ($rssChoice as $key => $value) {?>
+            <li class="nav-item active">
+                <a class="nav-link navText rounded-pill" href="index.php?cat=<?= $value ?>"><?= $value ?></a>
+            </li>
             <?php } ?>
         </ul>
         <button type="button" class="btn buttonParamaters" data-toggle="modal" data-target="#parametersModal">

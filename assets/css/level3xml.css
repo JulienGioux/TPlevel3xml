@@ -2,6 +2,9 @@ header {
     height: 20vh;
     width: auto;
 }
+header div img {
+    filter: invert();
+}
 header a:hover {
     text-decoration: none;
 }
@@ -10,8 +13,14 @@ header a:hover {
     width: 30px;
     margin-left : 1rem;
 }
-
-
+.nav-link:hover {
+    background-color: aliceblue;
+    color: black !important;   
+}
+.media a:hover {
+    text-decoration: none;
+    filter: invert();
+}
 .imgMedia {
     width: 100px;
     display: inline-flex;

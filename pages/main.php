@@ -1,5 +1,5 @@
-<main class="container p-3">
-    <div class="row">
+<main class="container">
+    <div class="row justify-content-center">
         <?php
         if (empty($_GET['cat'])) {
             foreach ($rssChoice as $key => $cat) {

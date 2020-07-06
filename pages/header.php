@@ -1,8 +1,8 @@
-<header class="d-flex align-items-center justify-content-center bg-custom">
+<header class="d-flex flex-row align-items-center justify-content-center bg-custom">
+    <div class="d-flex animate__animated animate__bounceIn">
     <a href="index.php">
-        <p class="h1">SUPER RSS READER</p>
+        <h1 class="h1">SUPER RSS READER</h1>
     </a>
-    <div>
-        <img src="assets\img\rss-logo-icon-png-11302.png" alt="icon_fluxrss" class="iconFlux">
-    </div>
+    <img src="assets\img\rss-logo-icon-png-11302.png" alt="icon_fluxrss" class="iconFlux mt-2">
+    </div>    
 </header>

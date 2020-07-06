@@ -3,7 +3,7 @@
 if (!isset($_GET['cat'])) {
     switch (count($rssChoice)) {
         case 1:
-            $classSecCat = 'col';
+            $classSecCat = 'col-md-8';
             break;
         case 2:
             $classSecCat = 'col-md-6';
@@ -12,11 +12,11 @@ if (!isset($_GET['cat'])) {
             $classSecCat = 'col-lg-4 col-md-6';
             break;
         default:
-            $classSecCat = 'col';
+            $classSecCat = 'col-md-8';
             break;
     }
 } else {
-    $classSecCat = 'col';
+    $classSecCat = 'col-md-8';
 }
 //défini couleur badge catégorie
 switch ($cat) {
@@ -41,26 +41,26 @@ switch ($cat) {
 }
 ?>
 
-<section class="<?= $classSecCat ?> my-3">
+<section class="<?= $classSecCat ?> my-2">
     <?php
     for ($i = 0; $i < $articlesNumber; $i++) {
     ?>
-        <div class="media bg-light p-3 border border-bottom shadow">
-            <div class="media m-auto">
+        <div class="media-body justify-content-center bg-light p-1 border border-bottom shadow animate__animated animate__bounceInUp">
+            <div class="media">
                 <div>
                     <a href="?cat=<?= $cat ?>">
-                        <div class="badge badge-<?= $classBadgeCat ?>"><?= $cat ?></div>
+                        <div class="mb-1 badge badge-<?= $classBadgeCat ?>"><?= $cat ?></div>
                     </a>
-                    <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mt-3 rounded d-block" alt="...">
+                    <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mt-2 rounded d-block" alt="...">
                 </div>
-                <div class="media-body p-2">
-                    <div class="row">
-                        <div class="col h6"><?= sortItem($rss, $i, 'title') ?></div>
+                <div class="media-body d-flex flex-column align-items-start m-0 p-2" style="min-height: 140px">
+                    <div class="m-0">
+                        <div class="h6"><?= sortItem($rss, $i, 'title') ?></div>
                     </div>
-                    <div class="row">
-                        <div class="col text-right">
-                            <button class="btn buttonArticle btn-sm m-1" type="button" data-toggle="modal" data-cat="<?= $cat ?>" data-catColor="<?= $classBadgeCat ?>" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= ltrim(sortItem($rss, $i, 'img')); ?>" data-link="<?= ltrim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss, $i, 'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss, $i, 'description') ?>">Détails</button>
-                            <a href="<?= sortItem($rss, $i, 'link') ?>" class="btn buttonArticle btn-sm m-1" target="_blank">Lire l'article</a>
+                    <div class="mt-auto align-self-end">
+                        <div class="justify-self-end">
+                            <button class="btn buttonArticle btn-sm m-1" type="button" data-toggle="modal" data-cat="<?= $cat ?>" data-catColor="<?= $classBadgeCat ?>" data-title="<?= sortItem($rss, $i, 'title') ?>" data-img="<?= trim(sortItem($rss, $i, 'img')); ?>" data-link="<?= trim(sortItem($rss, $i, 'link')); ?>" data-date="<?= sortItem($rss, $i, 'pubDate') ?>" data-target="#articlesModal" data-desc="<?= sortItem($rss, $i, 'description') ?>">Détails</button>
+                            <button type="button" onclick="window.open('<?= trim(sortItem($rss, $i, 'link'));?>', 'Article');" class="btn buttonArticle btn-sm m-1">Lire l'article</button>
                         </div>
                     </div>
                 </div>
