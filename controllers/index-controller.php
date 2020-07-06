@@ -49,7 +49,7 @@ $rssChoice =  $_POST['rssChoice'] ?? $rssChoice ?? ['actu', 'buzz', 'tech'];
 if (isset($_COOKIE['colorTheme'])) {
     $cssThemeCookie = $_COOKIE['colorTheme'];
 }
-// récupère le thème via formulaire et cré le cookie
+// récupère le thème via formulaire et créer le cookie
 if (isset($_POST['colorTheme']) && !empty($_POST['colorTheme'])) {
     setcookie("colorTheme", $_POST["colorTheme"], time()+31556926 ,'/');
 }
@@ -74,7 +74,7 @@ if (isset($_COOKIE['articlesNumber'])) {
             break;
     }
 }
-// récupère le thème via formulaire et cré le cookie
+// récupère le thème via formulaire et créer le cookie
 if (isset($_POST['articlesNumber']) && !empty($_POST['articlesNumber'])) {
     //vérifie que le formulaire renvoie 3, 5 ou 8.
     switch ($_POST['articlesNumber']) {
@@ -133,19 +133,3 @@ if (isset($_GET['cat']) && !empty($_GET['cat'])) {
     }
     
 }
-
-
-//Simple test : Affiche les $articlesNumber premiers articles de chaque flux selectionnés.
-// foreach ($rssChoice as $key => $cat) {
-//     $rss = simplexml_load_file($cache_files[$cat]);
-//     echo '<b>' . $cat . '</b><br>';
-//     for ($i=0; $i < $articlesNumber ; $i++) {
-        
-//         echo sortItem($rss,$i,'title') . '<br>';
-//         echo sortItem($rss,$i,'description') . '<br>';
-//         echo sortItem($rss,$i,'link') . '<br>';
-//         echo sortItem($rss,$i,'pubDate') . '<br>';
-//         echo '<img src="' .sortItem($rss,$i,'img') . '" alt=""><br>';
-//         echo '<br>';
-//     }
-// }
