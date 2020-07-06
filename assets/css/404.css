@@ -1,6 +1,6 @@
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: goldenrod;
+    font-family: 'Oswald', sans-serif;
+    background-color: #f0c808;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,4 +29,9 @@ a:hover {
     color: darkgoldenrod;
     text-decoration: underline;
     transition: 0.3s;
+}
+
+img {
+    width: 40%;
+    height: auto;
 }
