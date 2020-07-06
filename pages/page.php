@@ -48,7 +48,7 @@ switch ($cat) {
         <div class="media-body justify-content-center bg-light p-1 border border-bottom shadow animate__animated animate__bounceInUp">
             <div class="media">
                 <div>
-                    <a href="?cat=<?= $cat ?>">
+                    <a href="<?= $cat ?>">
                         <div class="mb-1 badge badge-<?= $classBadgeCat ?>"><?= $cat ?></div>
                     </a>
                     <img src="<?= sortItem($rss, $i, 'img') ?>" class="imgMedia mt-2 rounded d-block" alt="...">
